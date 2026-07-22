@@ -1,0 +1,55 @@
+/*
+ * paper.css — "paper feel" layer on top of Material for MkDocs.
+ *
+ * This is the P1-1 starter only (per Plan.md §1). Full typography pass,
+ * self-hosted fonts, sidenote layout, and reading-UX polish land in P3-1.
+ * Kept intentionally small here: measure, line-height, and the two paper
+ * background/ink palettes (light + dark), plus the dark-mode diagram
+ * inversion filter from §4.6.
+ */
+
+:root {
+  --nndl-serif: Georgia, "Source Serif 4", "Iowan Old Style", "Palatino Linotype", serif;
+}
+
+/* Body prose: serif, capped measure, generous line-height. */
+.md-typeset {
+  font-family: var(--nndl-serif);
+  line-height: 1.65;
+}
+
+.md-content__inner {
+  max-width: 70ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4 {
+  font-family: var(--nndl-serif);
+}
+
+/* Code stays monospace (Material default is already fine, keep explicit). */
+.md-typeset code,
+.md-typeset pre {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+}
+
+/* Light mode — warm off-white paper, near-black ink. */
+[data-md-color-scheme="default"] {
+  --md-default-bg-color: #faf8f2;
+  --md-default-fg-color: #1a1a1a;
+}
+
+/* Dark mode — warm dark gray, not pure black. */
+[data-md-color-scheme="slate"] {
+  --md-default-bg-color: #16181d;
+}
+
+/* §4.6: invert dark-ink-on-white diagrams in dark mode. Only diagram-class
+   images (tikz*, valley*) get this — photos must not be inverted. */
+[data-md-color-scheme="slate"] img.diagram {
+  filter: invert(0.92) hue-rotate(180deg);
+}

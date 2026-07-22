@@ -1,0 +1,5 @@
+# Do not commit MNIST data blobs. See ../PROVENANCE.md for how to
+# obtain mnist.pkl.gz and place it here (or use MNIST_DATA_PATH).
+*.pkl.gz
+*.gz
+*.pkl

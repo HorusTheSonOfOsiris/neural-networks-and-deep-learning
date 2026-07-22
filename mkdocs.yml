@@ -1,0 +1,44 @@
+site_name: Neural Networks and Deep Learning
+site_description: Unofficial readable mirror of Michael Nielsen's book (CC BY-NC 3.0)
+site_url: https://example.github.io/nndl-book/
+
+theme:
+  name: material
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle: { icon: material/weather-night, name: Dark mode }
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle: { icon: material/weather-sunny, name: Light mode }
+  features: [navigation.footer, toc.follow, search.highlight]
+
+markdown_extensions:
+  - attr_list
+  - admonition
+  - footnotes
+  - pymdownx.superfences
+  - pymdownx.arithmatex:
+      generic: true
+
+extra_css:
+  - css/paper.css
+
+extra_javascript:
+  # P1-1: MathJax loaded from CDN for scaffold/dev speed.
+  # P3 (per Plan.md §6): vendor MathJax locally under docs/js/ for offline/CI-safe builds.
+  - js/mathjax-config.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js
+
+nav:
+  - Home: index.md
+  - Chapter 1 - Using neural nets to recognize handwritten digits: chap1.md
+  - Chapter 2 - How the backpropagation algorithm works: chap2.md
+  - Chapter 3 - Improving the way neural networks learn: chap3.md
+  - Chapter 4 - A visual proof that neural nets can compute any function: chap4.md
+  - Chapter 5 - Why are deep neural networks hard to train?: chap5.md
+  - Chapter 6 - Deep learning: chap6.md
+  - Appendix - Is there a simple algorithm for intelligence?: appendix-sai.md
+  - Exercises & Problems: exercises-and-problems.md
+  - Acknowledgements: acknowledgements.md
+  - FAQ: faq.md

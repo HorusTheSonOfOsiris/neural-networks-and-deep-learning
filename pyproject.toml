@@ -1,0 +1,19 @@
+[project]
+name = "nueral-network-and-deep-learning"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "mkdocs>=1.6.1",
+    "mkdocs-material>=9.6.0",
+    "pymdown-extensions>=10.14",
+    "beautifulsoup4>=4.13.0",
+    "requests>=2.32.0",
+    "lxml>=5.3.0",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+]

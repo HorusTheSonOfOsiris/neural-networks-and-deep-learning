@@ -1,0 +1,1046 @@
+{
+  "generated_at": "2026-07-22T06:25:34.201880+00:00",
+  "source_base_url": "http://neuralnetworksanddeeplearning.com/",
+  "total_images": 98,
+  "pages": {
+    "about.html": [
+      "arrow.png"
+    ],
+    "acknowledgements.html": [
+      "arrow.png"
+    ],
+    "chap1.html": [
+      "Einstein_crop.jpg",
+      "Kangaroo.JPG",
+      "arrow.png",
+      "digits.png",
+      "digits_separate.png",
+      "hubble.jpg",
+      "mnist_100_digits.png",
+      "mnist_2_and_1.png",
+      "mnist_complete_zero.png",
+      "mnist_first_digit.png",
+      "mnist_other_features.png",
+      "mnist_really_bad_images.png",
+      "mnist_top_left_feature.png",
+      "tikz0.png",
+      "tikz1.png",
+      "tikz10.png",
+      "tikz11.png",
+      "tikz12.png",
+      "tikz13.png",
+      "tikz14.png",
+      "tikz15.png",
+      "tikz2.png",
+      "tikz3.png",
+      "tikz4.png",
+      "tikz5.png",
+      "tikz6.png",
+      "tikz7.png",
+      "tikz8.png",
+      "tikz9.png",
+      "valley.png",
+      "valley_with_ball.png"
+    ],
+    "chap2.html": [
+      "arrow.png",
+      "tikz16.png",
+      "tikz17.png",
+      "tikz18.png",
+      "tikz19.png",
+      "tikz20.png",
+      "tikz21.png",
+      "tikz22.png",
+      "tikz23.png",
+      "tikz24.png",
+      "tikz25.png",
+      "tikz26.png",
+      "tikz27.png"
+    ],
+    "chap3.html": [
+      "arrow.png",
+      "more_data.png",
+      "more_data_5.png",
+      "more_data_comparison.png",
+      "more_data_log.png",
+      "more_data_rotated_5.png",
+      "multiple_eta.png",
+      "overfitting1.png",
+      "overfitting2.png",
+      "overfitting3.png",
+      "overfitting4.png",
+      "overfitting_full.png",
+      "regularized1.png",
+      "regularized2.png",
+      "regularized_full.png",
+      "tikz28.png",
+      "tikz29.png",
+      "tikz30.png",
+      "tikz31.png",
+      "tikz32.png",
+      "tikz33.png",
+      "tikz34.png",
+      "weight_initialization_100.png",
+      "weight_initialization_30.png"
+    ],
+    "chap4.html": [
+      "arrow.png",
+      "bump_function.jpg",
+      "high_weight_function.jpg",
+      "play.png"
+    ],
+    "chap5.html": [
+      "arrow.png",
+      "circuit_multiplication.png",
+      "shallow_circuit.png",
+      "tikz35.png",
+      "tikz36.png",
+      "tikz37.png",
+      "tikz38.png",
+      "tikz39.png",
+      "tikz40.png",
+      "training_speed_2_layers.png",
+      "training_speed_3_layers.png",
+      "training_speed_4_layers.png"
+    ],
+    "chap6.html": [
+      "KSH.jpg",
+      "adversarial.jpg",
+      "arrow.png",
+      "digits.png",
+      "ensemble_errors.png",
+      "imagenet1.jpg",
+      "imagenet2.jpg",
+      "imagenet3.jpg",
+      "imagenet4.jpg",
+      "net_full_layer_0.png",
+      "simple_conv.png",
+      "tikz41.png",
+      "tikz42.png",
+      "tikz43.png",
+      "tikz44.png",
+      "tikz45.png",
+      "tikz46.png",
+      "tikz47.png",
+      "tikz48.png",
+      "tikz49.png"
+    ],
+    "exercises_and_problems.html": [
+      "arrow.png"
+    ],
+    "faq.html": [
+      "arrow.png"
+    ],
+    "index.html": [
+      "arrow.png"
+    ],
+    "sai.html": [
+      "arrow.png"
+    ]
+  },
+  "images": {
+    "Einstein_crop.jpg": {
+      "path": "docs/images/Einstein_crop.jpg",
+      "bytes": 31228,
+      "sha256": "58cd50d67940ac8752de02653845da8d51c5e069b4d184324965e4dbe761cf86",
+      "case_anomaly": true,
+      "referenced_by": [
+        "chap1.html"
+      ]
+    },
+    "KSH.jpg": {
+      "path": "docs/images/KSH.jpg",
+      "bytes": 54327,
+      "sha256": "0c38cf96d15bc4e73297705cd1c76ebccd7abf64772f2af8f9f492ac2b930c77",
+      "case_anomaly": true,
+      "referenced_by": [
+        "chap6.html"
+      ]
+    },
+    "Kangaroo.JPG": {
+      "path": "docs/images/Kangaroo.JPG",
+      "bytes": 25902,
+      "sha256": "bf115282c73d39267156cb7501a96401886b75a8ec2ca42f978beef26b0a490f",
+      "case_anomaly": true,
+      "referenced_by": [
+        "chap1.html"
+      ]
+    },
+    "adversarial.jpg": {
+      "path": "docs/images/adversarial.jpg",
+      "bytes": 83700,
+      "sha256": "dd33f07a62e7da05ee0afa1a3b7576b1d335917e6c3196e6f519670747373568",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap6.html"
+      ]
+    },
+    "arrow.png": {
+      "path": "docs/images/arrow.png",
+      "bytes": 2797,
+      "sha256": "e68e30add248b5001e352a46da6da5e54be44a4a403fe98ca42fb571f3b4c68c",
+      "case_anomaly": false,
+      "referenced_by": [
+        "about.html",
+        "acknowledgements.html",
+        "chap1.html",
+        "chap2.html",
+        "chap3.html",
+        "chap4.html",
+        "chap5.html",
+        "chap6.html",
+        "exercises_and_problems.html",
+        "faq.html",
+        "index.html",
+        "sai.html"
+      ]
+    },
+    "bump_function.jpg": {
+      "path": "docs/images/bump_function.jpg",
+      "bytes": 21102,
+      "sha256": "bf6c506e4c40197c24ee861127228d7179ed308bd421e272504e266251ea97eb",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap4.html"
+      ]
+    },
+    "circuit_multiplication.png": {
+      "path": "docs/images/circuit_multiplication.png",
+      "bytes": 38962,
+      "sha256": "6208eafd7c4b8862f7bdbceea92c31c951e0b466dc98d06e192ad6e73852cef0",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap5.html"
+      ]
+    },
+    "digits.png": {
+      "path": "docs/images/digits.png",
+      "bytes": 7468,
+      "sha256": "7cd50939daad8e476cdba5a0616f0ce81e8e53eaec89baeab03e3f019ad26305",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap1.html",
+        "chap6.html"
+      ]
+    },
+    "digits_separate.png": {
+      "path": "docs/images/digits_separate.png",
+      "bytes": 8111,
+      "sha256": "b10fb2a38bd63831bdf08852d776945afd20b07c7d6cb3e5365189b46310fe7f",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap1.html"
+      ]
+    },
+    "ensemble_errors.png": {
+      "path": "docs/images/ensemble_errors.png",
+      "bytes": 82258,
+      "sha256": "6d5580a2a611731c804188b8fcd1fd548c389810eaff82f8bb960bfad6485e2b",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap6.html"
+      ]
+    },
+    "high_weight_function.jpg": {
+      "path": "docs/images/high_weight_function.jpg",
+      "bytes": 18623,
+      "sha256": "567271c043897e3d3eff5ec78b9127f444360170b13757bdcb626ecd40b128cf",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap4.html"
+      ]
+    },
+    "hubble.jpg": {
+      "path": "docs/images/hubble.jpg",
+      "bytes": 24583,
+      "sha256": "28102883d79747c710a7d361b87cb65698224da9ec79c98067bcedacbf71ae1d",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap1.html"
+      ]
+    },
+    "imagenet1.jpg": {
+      "path": "docs/images/imagenet1.jpg",
+      "bytes": 12864,
+      "sha256": "5a42d8bc3a2a822018c6961cc4b49c50e8a488438c4c0618e2fd91864540cbc3",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap6.html"
+      ]
+    },
+    "imagenet2.jpg": {
+      "path": "docs/images/imagenet2.jpg",
+      "bytes": 6572,
+      "sha256": "927e10ae67b0dc862c4e7203c67d4d109d5eb06bee2cc9c2b32814e73e4a7bbb",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap6.html"
+      ]
+    },
+    "imagenet3.jpg": {
+      "path": "docs/images/imagenet3.jpg",
+      "bytes": 7321,
+      "sha256": "9178c55a88133edb829c0ecec196222f852cc347f1e2b46c31a2956e5a5c6548",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap6.html"
+      ]
+    },
+    "imagenet4.jpg": {
+      "path": "docs/images/imagenet4.jpg",
+      "bytes": 10723,
+      "sha256": "81eb4d7b63f24194d1207275618a8e17820a9ecafdd4b1803bf3aa63e81283e4",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap6.html"
+      ]
+    },
+    "mnist_100_digits.png": {
+      "path": "docs/images/mnist_100_digits.png",
+      "bytes": 30441,
+      "sha256": "ac92ee0ca3ee9d5179778cf9a409113f5a284a2d6b50295ef357a10920f20c8c",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap1.html"
+      ]
+    },
+    "mnist_2_and_1.png": {
+      "path": "docs/images/mnist_2_and_1.png",
+      "bytes": 10544,
+      "sha256": "d4684241316e6bd812c486ef81516a12dcffab949d9aaf905dc72654b672a3ae",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap1.html"
+      ]
+    },
+    "mnist_complete_zero.png": {
+      "path": "docs/images/mnist_complete_zero.png",
+      "bytes": 10551,
+      "sha256": "8171ae69e145dd3cd1cdf31c25b03476fbd02bd1bb9f3ee44011ad899100a30b",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap1.html"
+      ]
+    },
+    "mnist_first_digit.png": {
+      "path": "docs/images/mnist_first_digit.png",
+      "bytes": 1420,
+      "sha256": "fe67c44b624af4a8844ebd935f070c0d38d22c5c63ba627db594c1619d05f10c",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap1.html"
+      ]
+    },
+    "mnist_other_features.png": {
+      "path": "docs/images/mnist_other_features.png",
+      "bytes": 7105,
+      "sha256": "b444610aea63692d9de350d0b51b4906f1a9a26e6a79aa0256f0a68d4f86a5ba",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap1.html"
+      ]
+    },
+    "mnist_really_bad_images.png": {
+      "path": "docs/images/mnist_really_bad_images.png",
+      "bytes": 11964,
+      "sha256": "c5e4264c09c137c5527229df11dc996ba9d96a405d6b6fd07b1c03b8932b3bee",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap1.html"
+      ]
+    },
+    "mnist_top_left_feature.png": {
+      "path": "docs/images/mnist_top_left_feature.png",
+      "bytes": 7143,
+      "sha256": "ee711d1683407ce89c645ed38271cb3f2729fb94292b46b97d6378f7d057ccee",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap1.html"
+      ]
+    },
+    "more_data.png": {
+      "path": "docs/images/more_data.png",
+      "bytes": 33106,
+      "sha256": "a5831237f6cf17c37e0eb85ee043e6041029550a01057fd8b309f9eeeaf98421",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap3.html"
+      ]
+    },
+    "more_data_5.png": {
+      "path": "docs/images/more_data_5.png",
+      "bytes": 4832,
+      "sha256": "97c05c2b2a2250a0417419a83bd7b9dec4f4266311148c49b1a26be84070afd9",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap3.html"
+      ]
+    },
+    "more_data_comparison.png": {
+      "path": "docs/images/more_data_comparison.png",
+      "bytes": 43656,
+      "sha256": "9e252b00e937be88843aa8f625859d0f874d7dc83c835060f943f8c6bb1ee884",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap3.html"
+      ]
+    },
+    "more_data_log.png": {
+      "path": "docs/images/more_data_log.png",
+      "bytes": 34589,
+      "sha256": "ef62d8e9e324c26f6582d56ee41d1a6f4cff21edcac0c73b5a2343c921f4b09c",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap3.html"
+      ]
+    },
+    "more_data_rotated_5.png": {
+      "path": "docs/images/more_data_rotated_5.png",
+      "bytes": 5308,
+      "sha256": "8c0e54c8826c49cd0a32be0ce75bc9df709645437f14dc6191658dfcd5422640",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap3.html"
+      ]
+    },
+    "multiple_eta.png": {
+      "path": "docs/images/multiple_eta.png",
+      "bytes": 45958,
+      "sha256": "140836274ee6a9777fadd102bbdb7b6a1acfb37c6cc8b78d769958223a8f4b61",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap3.html"
+      ]
+    },
+    "net_full_layer_0.png": {
+      "path": "docs/images/net_full_layer_0.png",
+      "bytes": 9718,
+      "sha256": "cc676f4e3959da827c55f8313710e076170c1c892f89bb386eeba04de2808a4c",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap6.html"
+      ]
+    },
+    "overfitting1.png": {
+      "path": "docs/images/overfitting1.png",
+      "bytes": 36790,
+      "sha256": "7716802a840abebf3ff84d14b4a7d4994d53f4267e3b8058a6336e29072cef01",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap3.html"
+      ]
+    },
+    "overfitting2.png": {
+      "path": "docs/images/overfitting2.png",
+      "bytes": 63523,
+      "sha256": "d96cc37418b823883ce99bd935b9237052f0f9443b3986baeff8a5c0006f432a",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap3.html"
+      ]
+    },
+    "overfitting3.png": {
+      "path": "docs/images/overfitting3.png",
+      "bytes": 39108,
+      "sha256": "e2e10d4f7b4736e8f0e1da47aedc11fd85105c3cb0f0b4d773802a68fb60e8ea",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap3.html"
+      ]
+    },
+    "overfitting4.png": {
+      "path": "docs/images/overfitting4.png",
+      "bytes": 31213,
+      "sha256": "cc5a251fb2d7969639322f84856a06c19d7b01edff6c56d215bc1bdaa850ec13",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap3.html"
+      ]
+    },
+    "overfitting_full.png": {
+      "path": "docs/images/overfitting_full.png",
+      "bytes": 44607,
+      "sha256": "1b3963515d0fd2761aebf781f0b2ebe892752486ea92a330812fca0ba551a9ab",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap3.html"
+      ]
+    },
+    "play.png": {
+      "path": "docs/images/play.png",
+      "bytes": 8889,
+      "sha256": "f800de7945fd4f6cde4ebbbce51f092c6f85c110d916ccec92c3eee934481b0f",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap4.html"
+      ]
+    },
+    "regularized1.png": {
+      "path": "docs/images/regularized1.png",
+      "bytes": 36610,
+      "sha256": "0c3d3eb315e7fae733ac5ac88cf1f2ea2170d526a4334c3df588df1414d95504",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap3.html"
+      ]
+    },
+    "regularized2.png": {
+      "path": "docs/images/regularized2.png",
+      "bytes": 68476,
+      "sha256": "35d918859dcadbf68a94f0a5897a149d5b63c302bc59abc621a3f77491e5413e",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap3.html"
+      ]
+    },
+    "regularized_full.png": {
+      "path": "docs/images/regularized_full.png",
+      "bytes": 49907,
+      "sha256": "35ec0234b5312ac9a676ac28fd61538aa805ac8a042391b96257f61c0a8d09dd",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap3.html"
+      ]
+    },
+    "shallow_circuit.png": {
+      "path": "docs/images/shallow_circuit.png",
+      "bytes": 32514,
+      "sha256": "1df1d47c9505606a2f11aaeb7918f7161ff797104c78450d00e0b0e7158762fc",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap5.html"
+      ]
+    },
+    "simple_conv.png": {
+      "path": "docs/images/simple_conv.png",
+      "bytes": 31816,
+      "sha256": "4c293833f6ad54334ec1f35252c5727e54aedf99c243aef661134f8f93367847",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap6.html"
+      ]
+    },
+    "tikz0.png": {
+      "path": "docs/images/tikz0.png",
+      "bytes": 2462,
+      "sha256": "b66609b1d94084954db91ca9f9c2081fd1fad3de2d32fe457ab37ed2e072f514",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap1.html"
+      ]
+    },
+    "tikz1.png": {
+      "path": "docs/images/tikz1.png",
+      "bytes": 10401,
+      "sha256": "a756911fe6f05fbb9f48e073747331704ab896e80470a5c46ea262e86a013469",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap1.html"
+      ]
+    },
+    "tikz10.png": {
+      "path": "docs/images/tikz10.png",
+      "bytes": 7214,
+      "sha256": "d664d6b032d89bc317362ea13618f47b43fc27297a01726bb18c014eb0ff7f8d",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap1.html"
+      ]
+    },
+    "tikz11.png": {
+      "path": "docs/images/tikz11.png",
+      "bytes": 16960,
+      "sha256": "890ae3f5d5e723cb0dec03d4612f45af6a582c35d4c2d4c068830483cbe814f2",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap1.html"
+      ]
+    },
+    "tikz12.png": {
+      "path": "docs/images/tikz12.png",
+      "bytes": 89015,
+      "sha256": "92dd24e11dc0c2f26b5603ea6ce58ad39bc410a85fb05038b848742feee37a50",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap1.html"
+      ]
+    },
+    "tikz13.png": {
+      "path": "docs/images/tikz13.png",
+      "bytes": 37980,
+      "sha256": "83555d3c3218260914e806cd6441b11e19bd70169aa10025e6bcde685fe4bd57",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap1.html"
+      ]
+    },
+    "tikz14.png": {
+      "path": "docs/images/tikz14.png",
+      "bytes": 27324,
+      "sha256": "a56e15ac6c53911fd11808a4b608aac73e1ae9038a86aa420ae1ee917ae779cb",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap1.html"
+      ]
+    },
+    "tikz15.png": {
+      "path": "docs/images/tikz15.png",
+      "bytes": 4638,
+      "sha256": "db41e793b9571ce53ab35ef9a96ca358db6ecd4625b6d93e95aa24bbeac04aea",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap1.html"
+      ]
+    },
+    "tikz16.png": {
+      "path": "docs/images/tikz16.png",
+      "bytes": 13170,
+      "sha256": "3942ce1892ba29b0ac13174b85cf1b442230a2e6ac490807f3ffad6fe8100567",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap2.html"
+      ]
+    },
+    "tikz17.png": {
+      "path": "docs/images/tikz17.png",
+      "bytes": 8547,
+      "sha256": "59834f0a86a368f21288e097e648e253fa6ea440b55cf41e99fd455233dbb85d",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap2.html"
+      ]
+    },
+    "tikz18.png": {
+      "path": "docs/images/tikz18.png",
+      "bytes": 9204,
+      "sha256": "d5461ea63cb234b75afdc18c24a4b52dfce352f3fe7aa7617e0b107c11dc7ecd",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap2.html"
+      ]
+    },
+    "tikz19.png": {
+      "path": "docs/images/tikz19.png",
+      "bytes": 24041,
+      "sha256": "401c788efdb312347a24aa1fbcad851a8f351df7aa850d432384190675cb89a4",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap2.html"
+      ]
+    },
+    "tikz2.png": {
+      "path": "docs/images/tikz2.png",
+      "bytes": 2277,
+      "sha256": "84f349e9483a11891ee88a85b7623bf9573d369ccc14cab29d30b3f2e9a2b934",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap1.html"
+      ]
+    },
+    "tikz20.png": {
+      "path": "docs/images/tikz20.png",
+      "bytes": 1905,
+      "sha256": "7ee0993c769e35bc2c77d3cc0456da84888a6ea626e3a121aca6cd4c51e00238",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap2.html"
+      ]
+    },
+    "tikz21.png": {
+      "path": "docs/images/tikz21.png",
+      "bytes": 8786,
+      "sha256": "0cb35ef88620ed71d94d18e2283feef69d31b55e8b1a1285925aa191ae7fe9f0",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap2.html"
+      ]
+    },
+    "tikz22.png": {
+      "path": "docs/images/tikz22.png",
+      "bytes": 11659,
+      "sha256": "f9cb46176599270a2eaeab1fca78cd96e2cc15770d24d4ec9ec60802fc23909c",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap2.html"
+      ]
+    },
+    "tikz23.png": {
+      "path": "docs/images/tikz23.png",
+      "bytes": 11345,
+      "sha256": "f2c72b6e4532c2dfd894e8334887bb00856dbe8f0438b112c3885ab1cc90a231",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap2.html"
+      ]
+    },
+    "tikz24.png": {
+      "path": "docs/images/tikz24.png",
+      "bytes": 10911,
+      "sha256": "ffd5e47b655d4e0df90cbfe10fcac6b74808d96ace4e13d2a9315193e755ef03",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap2.html"
+      ]
+    },
+    "tikz25.png": {
+      "path": "docs/images/tikz25.png",
+      "bytes": 10985,
+      "sha256": "265408b2541f388651d4a9cbaf65e23fff0d9e7c23eb73ebf48370126bdfd103",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap2.html"
+      ]
+    },
+    "tikz26.png": {
+      "path": "docs/images/tikz26.png",
+      "bytes": 11129,
+      "sha256": "7f1c2a8be67386ebc8c90c359e237a099155373053f5c5cbcb8772dd93f95337",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap2.html"
+      ]
+    },
+    "tikz27.png": {
+      "path": "docs/images/tikz27.png",
+      "bytes": 12881,
+      "sha256": "db43bda7af5f7deb91b2658ac2dd23753ace62e41a648410622d0db7db3d9810",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap2.html"
+      ]
+    },
+    "tikz28.png": {
+      "path": "docs/images/tikz28.png",
+      "bytes": 2326,
+      "sha256": "38cec8e34f7e56829c9a9f3457aba229d2dbebde69751f939176b6c1dd5ed1a8",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap3.html"
+      ]
+    },
+    "tikz29.png": {
+      "path": "docs/images/tikz29.png",
+      "bytes": 3152,
+      "sha256": "be46c70d3acecfb3f3fa0f73a6dbb2637223f2411c3c964f240a03607b9dde4d",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap3.html"
+      ]
+    },
+    "tikz3.png": {
+      "path": "docs/images/tikz3.png",
+      "bytes": 4695,
+      "sha256": "a31cb39950cb06fb2a55cd82760a70c5ec50839f585c836fcfa5f5d8849ffc01",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap1.html"
+      ]
+    },
+    "tikz30.png": {
+      "path": "docs/images/tikz30.png",
+      "bytes": 11550,
+      "sha256": "7c197266209b831b9570e22e5896c6216f7a966aeb496b129761f00e4f79cbb5",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap3.html"
+      ]
+    },
+    "tikz31.png": {
+      "path": "docs/images/tikz31.png",
+      "bytes": 10716,
+      "sha256": "655c6922a2d82b8af4d44245c68867b88d73d25a3ebbe03aab1d8b331b396ad2",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap3.html"
+      ]
+    },
+    "tikz32.png": {
+      "path": "docs/images/tikz32.png",
+      "bytes": 5927,
+      "sha256": "c26d6ff960fa0e7fcf131657f143f1598d0cb7e21ea418948241d830187c4aaf",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap3.html"
+      ]
+    },
+    "tikz33.png": {
+      "path": "docs/images/tikz33.png",
+      "bytes": 46778,
+      "sha256": "0ccf9098d6db60d7c92a7843fa54d25b29f72a63eef723d6f34e9f9a072fa636",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap3.html"
+      ]
+    },
+    "tikz34.png": {
+      "path": "docs/images/tikz34.png",
+      "bytes": 46778,
+      "sha256": "770e2cccdd1f85b7ba60274cd5fa99e1dfd7ccb9a2f4d7881360313d1e4757b9",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap3.html"
+      ]
+    },
+    "tikz35.png": {
+      "path": "docs/images/tikz35.png",
+      "bytes": 22823,
+      "sha256": "b8edb039bd89f37825621fa74267c0ffbb047d99d06b38b0675357519a6bc8a4",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap5.html"
+      ]
+    },
+    "tikz36.png": {
+      "path": "docs/images/tikz36.png",
+      "bytes": 58248,
+      "sha256": "79d4a9297864a0321f77622207ccdae51742822762593dd18b7568ec096009c3",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap5.html"
+      ]
+    },
+    "tikz37.png": {
+      "path": "docs/images/tikz37.png",
+      "bytes": 3296,
+      "sha256": "39739d746e7b9a1677d5a2c991b0f19c3753fe001efcff2d4ad5d006355ec85d",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap5.html"
+      ]
+    },
+    "tikz38.png": {
+      "path": "docs/images/tikz38.png",
+      "bytes": 4788,
+      "sha256": "ac4abeb7ebdbd6abc3660179607aea715135b9642d0971bb0a29e9e248fb1f1e",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap5.html"
+      ]
+    },
+    "tikz39.png": {
+      "path": "docs/images/tikz39.png",
+      "bytes": 6614,
+      "sha256": "34bca9027951f5e72a8b43c5cc87434e7f00333a5282d888dcd7cef449e1003a",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap5.html"
+      ]
+    },
+    "tikz4.png": {
+      "path": "docs/images/tikz4.png",
+      "bytes": 6999,
+      "sha256": "936ec032b8b4d4011ae9454bc315225db8bd7aeded077fb065bd734cb10df125",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap1.html"
+      ]
+    },
+    "tikz40.png": {
+      "path": "docs/images/tikz40.png",
+      "bytes": 58248,
+      "sha256": "1961947692abb1dfee8d44ccb9643e86d8e20e6f602100d2a9dda962761b4085",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap5.html"
+      ]
+    },
+    "tikz41.png": {
+      "path": "docs/images/tikz41.png",
+      "bytes": 58248,
+      "sha256": "e2c498bbd219c6a0971b8d3b6a11156a5915e02ed69c8946302f01e2f70407ad",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap6.html"
+      ]
+    },
+    "tikz42.png": {
+      "path": "docs/images/tikz42.png",
+      "bytes": 4909,
+      "sha256": "836bf585ffe032aef331d943bb4d29632a352e0431e75462ca6eb4a83b02c8ee",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap6.html"
+      ]
+    },
+    "tikz43.png": {
+      "path": "docs/images/tikz43.png",
+      "bytes": 11503,
+      "sha256": "826a49949de66c6dbdd4846910f11e387a60701eaeab56c47cfd9b7ea54433c1",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap6.html"
+      ]
+    },
+    "tikz44.png": {
+      "path": "docs/images/tikz44.png",
+      "bytes": 15421,
+      "sha256": "be42d59bfbfffa286f411ece15fb16506d34f3b4919b21b33bcfca6155b1fe0d",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap6.html"
+      ]
+    },
+    "tikz45.png": {
+      "path": "docs/images/tikz45.png",
+      "bytes": 16512,
+      "sha256": "875870bc4c337f48c9efd1ffca306abc97bb57de1efa4b4952c7bbda15a97479",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap6.html"
+      ]
+    },
+    "tikz46.png": {
+      "path": "docs/images/tikz46.png",
+      "bytes": 3169,
+      "sha256": "c10d1caba9bf1ca8487b5abcf857679dfa5f734c321abbd868f47f0b7b9e10c8",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap6.html"
+      ]
+    },
+    "tikz47.png": {
+      "path": "docs/images/tikz47.png",
+      "bytes": 9127,
+      "sha256": "5d5341308453800924ee46213706066f65a0df172b5237b702491bfaf8b31937",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap6.html"
+      ]
+    },
+    "tikz48.png": {
+      "path": "docs/images/tikz48.png",
+      "bytes": 3431,
+      "sha256": "cfa4da2827e7943f5bd21db40b6c51abff2858d4c8128ddbf3163be47875b50f",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap6.html"
+      ]
+    },
+    "tikz49.png": {
+      "path": "docs/images/tikz49.png",
+      "bytes": 5835,
+      "sha256": "c294f0fd622989f0504cc877787f265cb14b75caaad8abf4ba764f6a6095ac81",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap6.html"
+      ]
+    },
+    "tikz5.png": {
+      "path": "docs/images/tikz5.png",
+      "bytes": 6716,
+      "sha256": "edb09056ba96bca81043cd8853043c5f59f07598502d636ea96b472d74e5ad57",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap1.html"
+      ]
+    },
+    "tikz6.png": {
+      "path": "docs/images/tikz6.png",
+      "bytes": 7365,
+      "sha256": "3b86848e146158c84d8d2a0cc297c7795506df88b49b69fe51c1d6429ed24d23",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap1.html"
+      ]
+    },
+    "tikz7.png": {
+      "path": "docs/images/tikz7.png",
+      "bytes": 888,
+      "sha256": "a3a79e54c42844b664e158ae27b9075b840143b1129285e517ba1a110ec42ea7",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap1.html"
+      ]
+    },
+    "tikz8.png": {
+      "path": "docs/images/tikz8.png",
+      "bytes": 10335,
+      "sha256": "092a7901a933fac9899b221a833e66072bc717fd9ce0569158aa8db7921d42fd",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap1.html"
+      ]
+    },
+    "tikz9.png": {
+      "path": "docs/images/tikz9.png",
+      "bytes": 2462,
+      "sha256": "0cea8d6a959a319f30a25ad9a05255ab368114a2d97ed2459eb645a3f7378d91",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap1.html"
+      ]
+    },
+    "training_speed_2_layers.png": {
+      "path": "docs/images/training_speed_2_layers.png",
+      "bytes": 43342,
+      "sha256": "e6dbafac25d6fe0b72040470b61f09989e803b801d123d9fa31d8ac6dfb6792c",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap5.html"
+      ]
+    },
+    "training_speed_3_layers.png": {
+      "path": "docs/images/training_speed_3_layers.png",
+      "bytes": 44334,
+      "sha256": "154f0148940cee282a94f2a1a166355470b0e5a30c7b5bb4b5b65d9b6e1c631a",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap5.html"
+      ]
+    },
+    "training_speed_4_layers.png": {
+      "path": "docs/images/training_speed_4_layers.png",
+      "bytes": 50851,
+      "sha256": "a3d8552793500723cd26c3e29d671daff60846d357782bf5622868832fb701c6",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap5.html"
+      ]
+    },
+    "valley.png": {
+      "path": "docs/images/valley.png",
+      "bytes": 92042,
+      "sha256": "7668ad83c180f926271bf0e95d16a08c656cb31e92ad486d1cf68bbee78a9fac",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap1.html"
+      ]
+    },
+    "valley_with_ball.png": {
+      "path": "docs/images/valley_with_ball.png",
+      "bytes": 85733,
+      "sha256": "a20dd60c3282ac645e7daa6069e41dc00793fd497cadd32365b94c01e8a3f085",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap1.html"
+      ]
+    },
+    "weight_initialization_100.png": {
+      "path": "docs/images/weight_initialization_100.png",
+      "bytes": 41182,
+      "sha256": "54a389a71915617a12191bce0862908dc9490393147e248a62b53a369fc32783",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap3.html"
+      ]
+    },
+    "weight_initialization_30.png": {
+      "path": "docs/images/weight_initialization_30.png",
+      "bytes": 42336,
+      "sha256": "d1e3682fcf52692cdbb725f74b84c3726e648e2a409e3cd5a1d132542ab7ce63",
+      "case_anomaly": false,
+      "referenced_by": [
+        "chap3.html"
+      ]
+    }
+  },
+  "case_anomalies": {
+    "count": 3,
+    "note": "Filenames containing uppercase characters. Original case is preserved on disk deliberately (source pages reference these exact strings), but GitHub Pages CI runs on a case-sensitive Linux filesystem \u2014 any convert.py output or hand link that references a lowercased form of these names will 404. P3 should grep for these filenames case-sensitively.",
+    "files": [
+      "Einstein_crop.jpg",
+      "KSH.jpg",
+      "Kangaroo.JPG"
+    ]
+  }
+}

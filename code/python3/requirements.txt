@@ -1,0 +1,11 @@
+# Dependencies for the code/python3/ companion port only.
+# Deliberately NOT merged into the root pyproject.toml (see Plan.md
+# Phase 5 / P5-1): this keeps the site-generation tooling deps and the
+# optional code-port deps independent of each other.
+#
+# network.py, network2.py, and mnist_loader.py need only numpy.
+# network3.py additionally needs Theano (see its module docstring --
+# Theano is unmaintained/dead and not expected to install cleanly on
+# modern Python; network3.py is provided for reference, not intended
+# to be run here).
+numpy>=1.26
