@@ -247,22 +247,14 @@ def render_inline_sequence(nodes: list, current_page: str) -> str:
             # as "*foo**", which Markdown parses as bold, not two separate
             # things. Pull that trailing '*' out of the preceding text and
             # re-emit it as an unambiguous raw <sup>*</sup> marker instead.
-            marker = ""
+            has_marker = False
             if parts and isinstance(parts[-1], str):
                 prev = parts[-1]
                 m = re.search(r"\*(\s*)$", prev)
                 if m:
                     parts[-1] = prev[: m.start()] + m.group(1)
-                    # Use the HTML entity, not a literal '*': a bare
-                    # asterisk here still participates in Python-Markdown's
-                    # emphasis-pairing scan even inside a raw <sup> tag, and
-                    # an odd total asterisk count in the paragraph corrupts
-                    # emphasis rendering elsewhere in the same paragraph
-                    # (observed: a stray *loss*/*objective* pair later in
-                    # the same sentence rendered with mismatched <em> tags
-                    # once this marker's bare '*' threw the count off).
-                    marker = "<sup>&#42;</sup>"
-            parts.append(marker + render_sidenote(node, current_page))
+                    has_marker = True
+            parts.append(render_sidenote(node, current_page, has_marker))
             i += 1
             continue
 
@@ -371,11 +363,23 @@ def render_inline_sequence(nodes: list, current_page: str) -> str:
     return text
 
 
-def render_sidenote(span_tag: Tag, current_page: str) -> str:
+def render_sidenote(span_tag: Tag, current_page: str, has_marker: bool) -> str:
     text = render_inline_sequence(list(span_tag.children), current_page).strip()
     if text.startswith("*"):
         text = text[1:].lstrip()
-    return f'<span class="sidenote">{text}</span>'
+    note_id = span_tag.get("data-sidenote-id")
+    if not note_id:
+        raise ValueError(f"Sidenote in {current_page} has no generated id")
+    plain_class = " sidenote-toggle--plain" if not has_marker else ""
+    return (
+        f'<input type="checkbox" id="{note_id}" class="sidenote-checkbox">'
+        f'<label for="{note_id}" class="sidenote-toggle{plain_class}" '
+        f'aria-label="Toggle sidenote">'
+        f'<sup class="sidenote-marker" aria-hidden="true">&#42;</sup>'
+        f'<span class="sidenote-toggle-text">Note</span>'
+        f'</label>'
+        f'<span class="sidenote">{text}</span>'
+    )
 
 
 def render_image(img_tag: Tag) -> str:
@@ -661,6 +665,13 @@ def render_blocks(nodes: list, current_page: str) -> list[str]:
 def convert_html(html: str, current_page: str) -> str:
     html = preprocess_eqnarrays(html)
     soup = BeautifulSoup(html, "lxml")
+
+    # Give every source sidenote a stable page-local control id. The ids are
+    # generated from source order so repeated conversions are byte-identical,
+    # and the renderer can emit a checkbox/label pair without global state.
+    page_slug = Path(current_page).stem
+    for index, sidenote in enumerate(soup.select("span.marginnote"), start=1):
+        sidenote["data-sidenote-id"] = f"sidenote-{page_slug}-{index}"
 
     header = soup.find("div", class_="header")
     title_text = ""

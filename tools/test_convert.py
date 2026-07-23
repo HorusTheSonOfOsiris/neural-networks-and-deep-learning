@@ -162,6 +162,9 @@ def test_sidenote_is_wrapped_not_merged():
     out = convert_fragment(body)
 
     assert '<span class="sidenote">' in out
+    assert 'id="sidenote-chap1-1"' in out
+    assert 'for="sidenote-chap1-1"' in out
+    assert 'class="sidenote-toggle"' in out
     # The note's own text is present, but only inside the sidenote wrapper.
     assert "UNIQUE_NOTE_TEXT_4471" in out
     sidenote_match = re.search(r'<span class="sidenote">(.*?)</span>', out)
@@ -183,7 +186,23 @@ def test_sidenote_without_asterisk_marker():
     # Not every marginnote is asterisk-marked (e.g. image credits captions).
     body = '<p>photo credits: <span class="marginnote">Credits: photographer A.</span></p>'
     out = convert_fragment(body)
+    assert 'class="sidenote-toggle sidenote-toggle--plain"' in out
     assert '<span class="sidenote">Credits: photographer A.</span>' in out
+
+
+def test_sidenote_ids_are_stable_and_unique():
+    body = (
+        '<p>first*<span class="marginnote">*One.</span> second*'
+        '<span class="marginnote">*Two.</span></p>'
+    )
+    first = convert_fragment(body)
+    second = convert_fragment(body)
+
+    assert first == second
+    assert first.count('id="sidenote-chap1-1"') == 1
+    assert first.count('for="sidenote-chap1-1"') == 1
+    assert first.count('id="sidenote-chap1-2"') == 1
+    assert first.count('for="sidenote-chap1-2"') == 1
 
 
 # --------------------------------------------------------------------------
