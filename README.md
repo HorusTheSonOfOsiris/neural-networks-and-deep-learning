@@ -23,6 +23,9 @@ not paraphrased.
   separately licensed MIT — see [`LICENSE`](LICENSE). The MIT license does
   **not** apply to the book text, equations, code samples, or images
   reproduced from the original source.
+- Source Serif 4 is © Adobe and distributed under the SIL Open Font License
+  1.1; its license is included at
+  [`docs/fonts/source-serif/LICENSE.txt`](docs/fonts/source-serif/LICENSE.txt).
 
 ## Status
 
@@ -30,8 +33,8 @@ The readable MVP is complete: all six chapters, the appendix, exercises,
 acknowledgements, and FAQ have been converted from committed source snapshots.
 Automated verification covers equations and anchors, sidenotes, internal links,
 images, interactive fallbacks, and byte-faithful Python 2.7 code blocks. Paper
-styling, local MathJax vendoring, visual review, and interactive widget ports
-remain in progress; see `PENDING.md` for the current work list.
+styling, responsive sidenotes, and local MathJax vendoring are complete. Visual
+review and interactive widget ports remain in progress.
 
 ## How to build
 
