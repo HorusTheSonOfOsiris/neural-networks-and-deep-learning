@@ -3,15 +3,17 @@ site_description: Unofficial readable mirror of Michael Nielsen's book (CC BY-NC
 site_url: https://example.github.io/nndl-book/
 
 theme:
-  name: material
-  palette:
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
-      toggle: { icon: material/weather-night, name: Dark mode }
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
-      toggle: { icon: material/weather-sunny, name: Light mode }
-  features: [navigation.footer, toc.follow, search.highlight]
+  name: shadcn
+  custom_dir: overrides
+  show_title: true
+  show_stargazers: false
+  show_datetime: false
+  topbar_sections: false
+  accent: "#b45f32"
+  katex_options: {}
+  pygments_style:
+    light: github-light
+    dark: github-dark
 
 markdown_extensions:
   - attr_list
@@ -25,8 +27,6 @@ extra_css:
   - css/paper.css
 
 extra_javascript:
-  # P1-1: MathJax loaded from CDN for scaffold/dev speed.
-  # P3 (per Plan.md §6): vendor MathJax locally under docs/js/ for offline/CI-safe builds.
   - js/mathjax-config.js
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js
 

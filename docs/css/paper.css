@@ -1,55 +1,433 @@
 /*
- * paper.css — "paper feel" layer on top of Material for MkDocs.
- *
- * This is the P1-1 starter only (per Plan.md §1). Full typography pass,
- * self-hosted fonts, sidenote layout, and reading-UX polish land in P3-1.
- * Kept intentionally small here: measure, line-height, and the two paper
- * background/ink palettes (light + dark), plus the dark-mode diagram
- * inversion filter from §4.6.
+ * A quiet, book-first layer for the Shadcn MkDocs theme.
+ * The shell uses the theme's bundled Geist fonts; long-form prose uses a
+ * system book-serif stack, so the site remains fast and works offline.
  */
 
 :root {
-  --nndl-serif: Georgia, "Source Serif 4", "Iowan Old Style", "Palatino Linotype", serif;
+  --nndl-serif: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino,
+    Georgia, serif;
+  --nndl-sans: Geist, Inter, ui-sans-serif, system-ui, sans-serif;
+  --nndl-mono: "Geist Mono", "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --nndl-paper: #fbf8f1;
+  --nndl-paper-deep: #f4eee2;
+  --nndl-ink: #24211c;
+  --nndl-ink-soft: #6d655b;
+  --nndl-rule: #ded5c6;
+  --nndl-accent: #a9512b;
+  --nndl-accent-soft: #f2dfd1;
+  --background: #fbf8f1;
+  --foreground: #24211c;
+  --card: #fffdf8;
+  --card-foreground: #24211c;
+  --popover: #fffdf8;
+  --popover-foreground: #24211c;
+  --primary: #8f4326;
+  --primary-foreground: #fffaf4;
+  --secondary: #f0e9dd;
+  --secondary-foreground: #39332c;
+  --muted: #f0e9dd;
+  --muted-foreground: #70675c;
+  --accent: #ead8c8;
+  --accent-foreground: #6f311d;
+  --border: #ded5c6;
+  --input: #ded5c6;
+  --ring: #b45f32;
+  --sidebar: #f6f0e5;
+  --sidebar-foreground: #3e3932;
+  --sidebar-primary: #8f4326;
+  --sidebar-primary-foreground: #fffaf4;
+  --sidebar-accent: #e9dfd0;
+  --sidebar-accent-foreground: #302b25;
+  --sidebar-border: #ded5c6;
+  --sidebar-ring: #b45f32;
+  --surface: #f6f0e5;
+  --code: #f1eadf;
 }
 
-/* Body prose: serif, capped measure, generous line-height. */
-.md-typeset {
+.dark {
+  --nndl-paper: #181713;
+  --nndl-paper-deep: #201e19;
+  --nndl-ink: #ece6da;
+  --nndl-ink-soft: #aaa195;
+  --nndl-rule: #3b3730;
+  --nndl-accent: #e3976d;
+  --nndl-accent-soft: #3d2920;
+  --background: #181713;
+  --foreground: #ece6da;
+  --card: #201e19;
+  --card-foreground: #ece6da;
+  --popover: #201e19;
+  --popover-foreground: #ece6da;
+  --primary: #e3976d;
+  --primary-foreground: #26170f;
+  --secondary: #292620;
+  --secondary-foreground: #e5ded2;
+  --muted: #292620;
+  --muted-foreground: #aaa195;
+  --accent: #3d2920;
+  --accent-foreground: #f0b18e;
+  --border: #3b3730;
+  --input: #3b3730;
+  --ring: #d68157;
+  --sidebar: #1d1b17;
+  --sidebar-foreground: #ddd6ca;
+  --sidebar-primary: #e3976d;
+  --sidebar-primary-foreground: #26170f;
+  --sidebar-accent: #302b24;
+  --sidebar-accent-foreground: #eee7dc;
+  --sidebar-border: #353129;
+  --sidebar-ring: #d68157;
+  --surface: #201e19;
+  --code: #25221d;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  background-color: var(--nndl-paper);
+  background-image:
+    radial-gradient(circle at 72% 4%, color-mix(in srgb, var(--nndl-accent) 6%, transparent) 0, transparent 24rem),
+    linear-gradient(90deg, color-mix(in srgb, var(--nndl-rule) 15%, transparent) 1px, transparent 1px);
+  background-size: auto, 4.5rem 100%;
+  color: var(--nndl-ink);
+  font-family: var(--nndl-sans);
+}
+
+::selection {
+  background: color-mix(in srgb, var(--nndl-accent) 28%, transparent);
+}
+
+header {
+  border-color: color-mix(in srgb, var(--nndl-rule) 82%, transparent) !important;
+  background: color-mix(in srgb, var(--nndl-paper) 86%, transparent) !important;
+  backdrop-filter: blur(16px) saturate(130%);
+}
+
+[data-slot="sidebar"] {
+  background: color-mix(in srgb, var(--sidebar) 94%, transparent);
+}
+
+[data-sidebar="content"] {
+  scrollbar-color: var(--nndl-rule) transparent;
+}
+
+[data-sidebar="menu-button"][data-active="true"] {
+  box-shadow: inset 2px 0 var(--nndl-accent);
+}
+
+article[view-transition-name="page"] {
+  width: min(100%, 76ch);
+  margin-inline: auto;
+  padding: 2.75rem clamp(1.25rem, 3.5vw, 3rem) 5rem;
+  animation: nndl-page-in 280ms ease-out both;
+}
+
+.nndl-page-actions {
+  float: right;
+  display: flex;
+  gap: 0.4rem;
+  margin: 0.2rem 0 1rem 1.5rem;
+}
+
+.nndl-page-actions a,
+.nndl-page-actions button {
+  border: 1px solid var(--nndl-rule);
+  background: color-mix(in srgb, var(--nndl-paper-deep) 75%, transparent);
+}
+
+.typography {
+  color: var(--nndl-ink);
   font-family: var(--nndl-serif);
+  font-size: clamp(1.02rem, 0.99rem + 0.16vw, 1.1rem);
+  font-kerning: normal;
+  line-height: 1.76;
+  text-rendering: optimizeLegibility;
+}
+
+.typography > :first-child {
+  margin-top: 0;
+}
+
+.typography p,
+.typography li {
+  text-wrap: pretty;
+}
+
+.typography h1,
+.typography h2,
+.typography h3,
+.typography h4 {
+  color: var(--nndl-ink);
+  font-family: var(--nndl-sans);
+  font-weight: 620;
+  letter-spacing: -0.025em;
+  line-height: 1.16;
+  text-wrap: balance;
+}
+
+.typography h1 {
+  max-width: 19ch;
+  margin: 0 0 2.25rem;
+  font-size: clamp(2.35rem, 1.9rem + 1.8vw, 3.85rem);
+  font-weight: 580;
+  letter-spacing: -0.045em;
+}
+
+.typography h1::after {
+  display: block;
+  width: 3.25rem;
+  height: 3px;
+  margin-top: 1.25rem;
+  border-radius: 999px;
+  background: var(--nndl-accent);
+  content: "";
+}
+
+.typography h2 {
+  margin-top: 3.5rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--nndl-rule);
+  font-size: clamp(1.65rem, 1.5rem + 0.55vw, 2.05rem);
+}
+
+.typography h3 {
+  margin-top: 2.6rem;
+  font-size: 1.35rem;
+}
+
+.typography h4 {
+  margin-top: 2rem;
+  font-size: 1.08rem;
+  letter-spacing: -0.01em;
+}
+
+.typography a {
+  color: var(--nndl-accent);
+  font-weight: 520;
+  text-decoration-color: color-mix(in srgb, var(--nndl-accent) 45%, transparent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+  transition: color 140ms ease, text-decoration-color 140ms ease;
+}
+
+.typography a:hover {
+  color: color-mix(in srgb, var(--nndl-accent) 78%, var(--nndl-ink));
+  text-decoration-color: currentColor;
+}
+
+.typography strong {
+  color: color-mix(in srgb, var(--nndl-ink) 92%, var(--nndl-accent));
+}
+
+.typography blockquote {
+  margin-block: 2rem;
+  padding: 0.25rem 0 0.25rem 1.5rem;
+  border-left: 3px solid var(--nndl-accent);
+  color: var(--nndl-ink-soft);
+  font-size: 1.05em;
+  font-style: italic;
+}
+
+.typography code,
+.typography pre,
+.typography kbd {
+  font-family: var(--nndl-mono);
+}
+
+.typography :not(pre) > code {
+  border: 1px solid var(--nndl-rule);
+  border-radius: 0.35rem;
+  background: var(--code);
+  color: var(--nndl-ink);
+  font-size: 0.86em;
+}
+
+.typography pre {
+  margin-block: 1.75rem;
+  border: 1px solid var(--nndl-rule);
+  border-radius: 0.7rem;
+  background: var(--code) !important;
+  box-shadow: 0 14px 35px color-mix(in srgb, var(--nndl-ink) 7%, transparent);
+  font-size: 0.82rem;
   line-height: 1.65;
 }
 
-.md-content__inner {
-  max-width: 70ch;
-  margin-left: auto;
-  margin-right: auto;
+.typography img {
+  display: block;
+  max-width: min(100%, 58rem);
+  height: auto;
+  margin: 2rem auto;
+  border-radius: 0.45rem;
 }
 
-.md-typeset h1,
-.md-typeset h2,
-.md-typeset h3,
-.md-typeset h4 {
-  font-family: var(--nndl-serif);
+.typography img:not(.diagram) {
+  border: 1px solid var(--nndl-rule);
+  box-shadow: 0 14px 40px color-mix(in srgb, var(--nndl-ink) 10%, transparent);
 }
 
-/* Code stays monospace (Material default is already fine, keep explicit). */
-.md-typeset code,
-.md-typeset pre {
-  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+.dark .typography img.diagram {
+  filter: invert(0.9) hue-rotate(180deg) contrast(0.92);
 }
 
-/* Light mode — warm off-white paper, near-black ink. */
-[data-md-color-scheme="default"] {
-  --md-default-bg-color: #faf8f2;
-  --md-default-fg-color: #1a1a1a;
+.typography table {
+  display: table;
+  width: 100%;
+  margin-block: 2rem;
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+  border: 1px solid var(--nndl-rule);
+  border-radius: 0.6rem;
+  font-family: var(--nndl-sans);
+  font-size: 0.9rem;
 }
 
-/* Dark mode — warm dark gray, not pure black. */
-[data-md-color-scheme="slate"] {
-  --md-default-bg-color: #16181d;
+.typography th {
+  background: var(--nndl-paper-deep);
+  color: var(--nndl-ink);
+  font-weight: 620;
 }
 
-/* §4.6: invert dark-ink-on-white diagrams in dark mode. Only diagram-class
-   images (tikz*, valley*) get this — photos must not be inverted. */
-[data-md-color-scheme="slate"] img.diagram {
-  filter: invert(0.92) hue-rotate(180deg);
+.typography th,
+.typography td {
+  padding: 0.7rem 0.85rem;
+  border-color: var(--nndl-rule);
+}
+
+.math-display,
+.MathJax_Display {
+  max-width: 100%;
+  margin-block: 1.6rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: thin;
+}
+
+.interactive-placeholder {
+  position: relative;
+  margin-block: 2rem;
+  padding: 1.25rem 1.4rem 1.25rem 3.65rem;
+  border: 1px dashed color-mix(in srgb, var(--nndl-accent) 56%, var(--nndl-rule));
+  border-radius: 0.75rem;
+  background: color-mix(in srgb, var(--nndl-accent-soft) 42%, transparent);
+  color: var(--nndl-ink-soft);
+  font-family: var(--nndl-sans);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.interactive-placeholder::before {
+  position: absolute;
+  top: 1.15rem;
+  left: 1.25rem;
+  color: var(--nndl-accent);
+  content: "\2197";
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+.interactive-placeholder p {
+  margin: 0;
+}
+
+.admonition {
+  margin-block: 2rem;
+  padding: 1rem 1.2rem;
+  border: 1px solid var(--nndl-rule);
+  border-left: 3px solid var(--nndl-accent);
+  border-radius: 0.6rem;
+  background: color-mix(in srgb, var(--nndl-paper-deep) 72%, transparent);
+  box-shadow: none;
+}
+
+.admonition-title {
+  margin: 0 0 0.35rem;
+  color: var(--nndl-ink);
+  font-family: var(--nndl-sans);
+  font-size: 0.82rem;
+  font-weight: 680;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.sidenote {
+  display: block;
+  margin: 1rem 0 1.5rem;
+  padding: 0.85rem 1rem;
+  border-left: 2px solid var(--nndl-accent);
+  background: color-mix(in srgb, var(--nndl-paper-deep) 74%, transparent);
+  color: var(--nndl-ink-soft);
+  font-family: var(--nndl-sans);
+  font-size: 0.82rem;
+  line-height: 1.55;
+}
+
+sup + .sidenote::before {
+  margin-right: 0.4em;
+  color: var(--nndl-accent);
+  content: "Note";
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+@media (min-width: 112rem) {
+  .sidenote {
+    float: right;
+    clear: right;
+    width: 17rem;
+    margin: 0.25rem -20rem 1.4rem 2rem;
+    border-left-width: 1px;
+    background: transparent;
+  }
+}
+
+@media (max-width: 48rem) {
+  body {
+    background-image: none;
+  }
+
+  article[view-transition-name="page"] {
+    padding: 1.75rem 1.1rem 3.5rem;
+  }
+
+  .typography h1 {
+    margin-bottom: 1.75rem;
+    font-size: clamp(2rem, 9vw, 2.8rem);
+  }
+
+  .typography h2 {
+    margin-top: 2.75rem;
+  }
+
+  .nndl-page-actions {
+    margin-left: 0.75rem;
+  }
+}
+
+@keyframes nndl-page-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  article[view-transition-name="page"] {
+    animation: none;
+  }
 }

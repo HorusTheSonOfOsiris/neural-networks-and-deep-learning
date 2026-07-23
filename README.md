@@ -3,7 +3,7 @@
 This repository is an **unofficial, non-commercial static-site reformatting**
 of [*Neural Networks and Deep Learning*](http://neuralnetworksanddeeplearning.com)
 by **Michael Nielsen**, built with [MkDocs](https://www.mkdocs.org/) and
-[Material for MkDocs](https://squidfunk.github.io/mkdocs-material/). The goal
+[Shadcn for MkDocs](https://asiffer.github.io/mkdocs-shadcn/). The goal
 is a more comfortable reading experience (typography, light/dark mode,
 search, working equation anchors) on top of the original text — verbatim,
 not paraphrased.
@@ -66,7 +66,7 @@ See `Plan.md` §2 for the authoritative layout. In short:
 - `tools/` — scraping/conversion/verification scripts (Python).
 - `raw/` — committed raw HTML snapshots of the source site (input of record).
 - `docs/` — the MkDocs source (Markdown pages, images, CSS, JS).
-- `mkdocs.yml` — site configuration (Material theme, MathJax, extensions).
+- `mkdocs.yml` — site configuration (Shadcn theme, MathJax, extensions).
 
 ## Disclaimer
 
