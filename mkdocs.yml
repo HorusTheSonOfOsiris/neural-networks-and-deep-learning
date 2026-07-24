@@ -1,6 +1,8 @@
 site_name: Neural Networks and Deep Learning
 site_description: Unofficial readable mirror of Michael Nielsen's book (CC BY-NC 3.0)
 site_url: https://horusthesonofosiris.github.io/neural-networks-and-deep-learning/
+repo_url: https://github.com/HorusTheSonOfOsiris/neural-networks-and-deep-learning
+repo_name: HorusTheSonOfOsiris/neural-networks-and-deep-learning
 
 theme:
   name: shadcn
