@@ -1,3 +1,7 @@
+---
+sidebar_title: "03 · Learning techniques"
+---
+
 # Improving the way neural networks learn
 
 When a golf player is first learning to play golf, they usually spend most of their time developing a basic swing.  Only gradually do they develop other shots, learning to chip, draw and fade the ball, building on and modifying their basic swing.  In a similar way, up to now we've focused on understanding the backpropagation algorithm. It's our "basic swing", the foundation for learning in most work on neural networks.  In this chapter I explain a suite of techniques which can be used to improve on our vanilla implementation of backpropagation, and so improve the way our networks learn.

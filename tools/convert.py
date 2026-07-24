@@ -62,6 +62,16 @@ LINK_MAP = {
 
 EXERCISE_HEADING_WORDS = {"exercise", "exercises", "problem", "problems"}
 
+SIDEBAR_TITLES = {
+    "chap1.html": "01 · Handwritten digits",
+    "chap2.html": "02 · Backpropagation",
+    "chap3.html": "03 · Learning techniques",
+    "chap4.html": "04 · Universal approximation",
+    "chap5.html": "05 · Deep-network training",
+    "chap6.html": "06 · Deep learning",
+    "sai.html": "Appendix · Intelligence",
+}
+
 _INTERNAL_HTML_RE = re.compile(r"^([\w.-]+\.html)(#.*)?$")
 
 # --------------------------------------------------------------------------
@@ -693,6 +703,9 @@ def convert_html(html: str, current_page: str) -> str:
     blocks = render_blocks(children, current_page)
 
     doc_parts = []
+    sidebar_title = SIDEBAR_TITLES.get(current_page)
+    if sidebar_title:
+        doc_parts.append(f'---\nsidebar_title: "{sidebar_title}"\n---')
     if title_text:
         doc_parts.append(f"# {title_text}")
     doc_parts.extend(blocks)

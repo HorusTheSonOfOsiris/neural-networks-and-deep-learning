@@ -1,3 +1,7 @@
+---
+sidebar_title: "02 · Backpropagation"
+---
+
 # How the backpropagation algorithm works
 
 In the [last chapter](chap1.md) we saw how neural networks can learn their weights and biases using the gradient descent algorithm. There was, however, a gap in our explanation: we didn't discuss how to compute the gradient of the cost function.  That's quite a gap!  In this chapter I'll explain a fast algorithm for computing such gradients, an algorithm known as *backpropagation*.

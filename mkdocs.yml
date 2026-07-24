@@ -32,13 +32,16 @@ extra_javascript:
 
 nav:
   - Home: index.md
-  - Chapter 1 - Using neural nets to recognize handwritten digits: chap1.md
-  - Chapter 2 - How the backpropagation algorithm works: chap2.md
-  - Chapter 3 - Improving the way neural networks learn: chap3.md
-  - Chapter 4 - A visual proof that neural nets can compute any function: chap4.md
-  - Chapter 5 - Why are deep neural networks hard to train?: chap5.md
-  - Chapter 6 - Deep learning: chap6.md
-  - Appendix - Is there a simple algorithm for intelligence?: appendix-sai.md
-  - Exercises & Problems: exercises-and-problems.md
-  - Acknowledgements: acknowledgements.md
-  - FAQ: faq.md
+  - Chapters:
+      - Chapter 1 - Using neural nets to recognize handwritten digits: chap1.md
+      - Chapter 2 - How the backpropagation algorithm works: chap2.md
+      - Chapter 3 - Improving the way neural networks learn: chap3.md
+      - Chapter 4 - A visual proof that neural nets can compute any function: chap4.md
+      - Chapter 5 - Why are deep neural networks hard to train?: chap5.md
+      - Chapter 6 - Deep learning: chap6.md
+  - Resources:
+      - Appendix - Is there a simple algorithm for intelligence?: appendix-sai.md
+      - Exercises & Problems: exercises-and-problems.md
+  - About:
+      - Acknowledgements: acknowledgements.md
+      - FAQ: faq.md

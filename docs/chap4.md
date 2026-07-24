@@ -1,3 +1,7 @@
+---
+sidebar_title: "04 · Universal approximation"
+---
+
 # A visual proof that neural nets can compute any function
 
 One of the most striking facts about neural networks is that they can compute any function at all.  That is, suppose someone hands you some complicated, wiggly function, $f(x)$:

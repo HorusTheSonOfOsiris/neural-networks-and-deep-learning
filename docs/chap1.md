@@ -1,3 +1,7 @@
+---
+sidebar_title: "01 · Handwritten digits"
+---
+
 # Using neural nets to recognize handwritten digits
 
 The human visual system is one of the wonders of the world.  Consider the following sequence of handwritten digits: <a id="complete_zero"></a>

@@ -1,3 +1,7 @@
+---
+sidebar_title: "05 · Deep-network training"
+---
+
 # Why are deep neural networks hard to train?
 
 Imagine you're an engineer who has been asked to design a computer from scratch.  One day you're working away in your office, designing logical circuits, setting out `AND` gates, `OR` gates, and so on, when your boss walks in with bad news. The customer has just added a surprising design requirement: the circuit for the entire computer must be just two layers deep:

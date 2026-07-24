@@ -457,6 +457,18 @@ def test_nonchapter_header_supplies_title():
     )
 
 
+def test_chapter_emits_compact_sidebar_title_without_changing_heading():
+    html = (
+        '<html><body><div class="header">'
+        '<h1 class="chapter_title">Using neural nets to recognize handwritten digits</h1>'
+        '</div><div class="section"><p>Body.</p></div></body></html>'
+    )
+    out = convert.convert_html(html, "chap1.html")
+
+    assert out.startswith('---\nsidebar_title: "01 · Handwritten digits"\n---\n\n')
+    assert "# Using neural nets to recognize handwritten digits" in out
+
+
 # --------------------------------------------------------------------------
 # Dead same-page anchor fixups (chap6.html source-native broken links --
 # verified no matching `name="..."` anchor exists anywhere in raw/chap6.html;
