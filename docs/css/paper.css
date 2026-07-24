@@ -327,14 +327,28 @@ article[view-transition-name="page"] {
   font-size: 0.86em;
 }
 
+.typography .highlight {
+  max-width: 100%;
+}
+
 .typography pre {
   margin-block: 1.75rem;
+  max-width: 100%;
+  padding: 1.15rem 1.3rem;
   border: 1px solid var(--nndl-rule);
   border-radius: 0.7rem;
   background: var(--code) !important;
   box-shadow: 0 14px 35px color-mix(in srgb, var(--nndl-ink) 7%, transparent);
   font-size: 0.82rem;
   line-height: 1.65;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: thin;
+}
+
+.typography pre > code {
+  display: block;
+  white-space: pre;
 }
 
 .typography img {
@@ -343,6 +357,30 @@ article[view-transition-name="page"] {
   height: auto;
   margin: 2rem auto;
   border-radius: 0.45rem;
+}
+
+/* Image gallery: a paragraph of linked images (e.g. the credits row) should
+   lay out as a centered horizontal row. The source uses an invalid
+   `height="190px"` attribute (HTML height must be unitless) which browsers
+   ignore, so normalize the height here too. */
+.typography p:has(a > img) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.typography p:has(a > img) a {
+  display: inline-flex;
+  margin: 0;
+}
+
+.typography p:has(a > img) img {
+  height: 190px;
+  width: auto;
+  max-width: 100%;
+  margin: 0;
 }
 
 .typography img:not(.diagram) {

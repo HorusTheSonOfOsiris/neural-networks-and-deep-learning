@@ -38,7 +38,10 @@ window.MathJax = {
   },
   options: {
     ignoreHtmlClass: ".*|",
-    processHtmlClass: "arithmatex",
+    // arithmatex wraps markdown $...$ math; the hand-authored raw-HTML
+    // `<div class="math-display">` eqnarray blocks (Plan.md §4.2) carry no
+    // arithmatex class, so they must be listed here or MathJax skips them.
+    processHtmlClass: "arithmatex|math-display",
   },
 };
 

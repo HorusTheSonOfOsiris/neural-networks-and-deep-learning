@@ -959,7 +959,7 @@ To address these questions, let's think back to the interpretation of artificial
 
 <input type="checkbox" id="sidenote-chap1-8" class="sidenote-checkbox"><label for="sidenote-chap1-8" class="sidenote-toggle sidenote-toggle--plain" aria-label="Toggle sidenote"><sup class="sidenote-marker" aria-hidden="true">&#42;</sup><span class="sidenote-toggle-text">Note</span></label><span class="sidenote">Credits: 1. [Ester Inbar](http://commons.wikimedia.org/wiki/User:ST). 2. Unknown. 3. NASA, ESA, G. Illingworth, D. Magee, and P. Oesch (University of California, Santa Cruz), R. Bouwens (Leiden University), and the HUDF09 Team.  Click on the images for more details.</span>
 
-[<img src="../images/Kangaroo.JPG" height="190px" alt="">](http://commons.wikimedia.org/wiki/File:Kangaroo_ST_03.JPG) [<img src="../images/Einstein_crop.jpg" height="190px" alt="">](http://commons.wikimedia.org/wiki/File:Albert_Einstein_at_the_age_of_three_(1882).jpg) [<img src="../images/hubble.jpg" height="190px" alt="">](http://commons.wikimedia.org/wiki/File:The_Hubble_eXtreme_Deep_Field.jpg)
+[<img src="../images/Kangaroo.JPG" height="190" alt="">](http://commons.wikimedia.org/wiki/File:Kangaroo_ST_03.JPG) [<img src="../images/Einstein_crop.jpg" height="190" alt="">](http://commons.wikimedia.org/wiki/File:Albert_Einstein_at_the_age_of_three_(1882).jpg) [<img src="../images/hubble.jpg" height="190" alt="">](http://commons.wikimedia.org/wiki/File:The_Hubble_eXtreme_Deep_Field.jpg)
 
 We could attack this problem the same way we attacked handwriting recognition - by using the pixels in the image as input to a neural network, with the output from the network a single neuron indicating either "Yes, it's a face" or "No, it's not a face".
 
