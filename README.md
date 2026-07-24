@@ -64,8 +64,6 @@ GitHub Pages via `.github/workflows/deploy.yml` on push to `main`.
 
 ## Repository layout
 
-See `Plan.md` §2 for the authoritative layout. In short:
-
 - `tools/` — scraping/conversion/verification scripts (Python).
 - `raw/` — committed raw HTML snapshots of the source site (input of record).
 - `docs/` — the MkDocs source (Markdown pages, images, CSS, JS).
