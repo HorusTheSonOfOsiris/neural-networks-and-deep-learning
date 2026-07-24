@@ -415,6 +415,76 @@ article[view-transition-name="page"] {
   margin: 0;
 }
 
+.interactive-placeholder.is-enhanced {
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.interactive-placeholder.is-enhanced::before {
+  content: none;
+}
+
+.nndl-plot {
+  display: block;
+  width: min(100%, 42rem);
+  height: auto;
+  margin-inline: auto;
+  overflow: visible;
+  border: 1px solid var(--nndl-rule);
+  border-radius: 0.75rem;
+  background: color-mix(in srgb, var(--nndl-paper-deep) 58%, var(--nndl-paper));
+  box-shadow: 0 16px 42px color-mix(in srgb, var(--nndl-ink) 7%, transparent);
+}
+
+.nndl-plot-title,
+.nndl-plot-label,
+.nndl-plot-tick {
+  fill: var(--nndl-ink);
+  font-family: var(--nndl-sans);
+}
+
+.nndl-plot-title {
+  font-size: 1rem;
+  font-weight: 650;
+  letter-spacing: -0.015em;
+}
+
+.nndl-plot-label {
+  font-family: var(--nndl-serif);
+  font-size: 1.05rem;
+  font-style: italic;
+}
+
+.nndl-plot-tick {
+  fill: var(--nndl-ink-soft);
+  font-size: 0.72rem;
+}
+
+.nndl-plot-gridline,
+.nndl-plot-axis,
+.nndl-plot-curve {
+  vector-effect: non-scaling-stroke;
+}
+
+.nndl-plot-gridline {
+  stroke: color-mix(in srgb, var(--nndl-rule) 72%, transparent);
+  stroke-width: 1;
+}
+
+.nndl-plot-axis {
+  stroke: color-mix(in srgb, var(--nndl-ink) 68%, transparent);
+  stroke-width: 1.2;
+}
+
+.nndl-plot-curve {
+  fill: none;
+  stroke: var(--nndl-accent);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2.5;
+}
+
 .admonition {
   margin-block: 2rem;
   padding: 1rem 1.2rem;
