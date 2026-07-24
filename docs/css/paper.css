@@ -195,10 +195,13 @@ header {
 }
 
 article[view-transition-name="page"] {
-  width: min(100%, 76ch);
+  --nndl-reading-width: 76ch;
+
+  width: min(100%, var(--nndl-reading-width));
   margin-inline: auto;
   padding: 2.75rem clamp(1.25rem, 3.5vw, 3rem) 5rem;
   animation: nndl-page-in 280ms ease-out both;
+  transition: width 220ms ease;
 }
 
 .nndl-page-actions {
@@ -251,6 +254,7 @@ article[view-transition-name="page"] {
   font-size: clamp(2.35rem, 1.9rem + 1.8vw, 3.85rem);
   font-weight: 580;
   letter-spacing: -0.045em;
+  transition: max-width 220ms ease;
 }
 
 .typography h1::after {
@@ -526,6 +530,16 @@ article[view-transition-name="page"] {
   }
 }
 
+@media (min-width: 100rem) {
+  html.layout-full article[view-transition-name="page"] {
+    --nndl-reading-width: 112ch;
+  }
+
+  html.layout-full .typography h1 {
+    max-width: 24ch;
+  }
+}
+
 @media (max-width: 48rem) {
   body {
     background-image: none;
@@ -568,5 +582,10 @@ article[view-transition-name="page"] {
 
   article[view-transition-name="page"] {
     animation: none;
+    transition: none;
+  }
+
+  .typography h1 {
+    transition: none;
   }
 }
