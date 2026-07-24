@@ -31,7 +31,7 @@ OUTPUT = r"""# Test
 
 Text<sup>&#42;</sup><span class="sidenote">A note.</span>
 
-<img src="images/example.png" alt="">
+<img src="../images/example.png" alt="">
 
 ```python
 print 'Python 2'\n
@@ -82,3 +82,18 @@ def test_local_link_checker_rejects_missing_fragment(tmp_path: Path):
     (docs / "two.md").write_text("# Present {#present}\n", encoding="utf-8")
     failures = verify.verify_local_links(docs)
     assert any("anchor target does not exist" in failure.message for failure in failures)
+
+
+def test_image_checker_resolves_urls_from_built_page_directory(
+    tmp_path: Path, monkeypatch
+):
+    docs = tmp_path / "docs"
+    images = docs / "images"
+    images.mkdir(parents=True)
+    (images / "example.png").write_bytes(b"image")
+    (docs / "chap1.md").write_text(
+        '<img src="../images/example.png" alt="">\n', encoding="utf-8"
+    )
+    monkeypatch.setattr(verify, "CHAPTERS", ("chap1",))
+
+    assert verify.verify_image_files(docs) == []

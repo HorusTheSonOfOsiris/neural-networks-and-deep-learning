@@ -121,11 +121,18 @@ def content_image_sources(section: Tag) -> Counter[str]:
     )
 
 
+def canonical_output_image_source(src: str) -> str:
+    """Normalize page-relative rendered URLs back to source inventory paths."""
+    return src.removeprefix("../")
+
+
 def output_image_sources(soup: BeautifulSoup) -> Counter[str]:
     return Counter(
-        src
+        canonical_output_image_source(src)
         for image in soup.find_all("img")
-        if (src := image.get("src", "")).startswith("images/")
+        if canonical_output_image_source(src := image.get("src", "")).startswith(
+            "images/"
+        )
         and Path(urlsplit(src).path).name != "arrow.png"
     )
 
@@ -373,7 +380,13 @@ def verify_image_files(docs_dir: Path) -> list[Failure]:
             parsed = urlsplit(src)
             if parsed.scheme or parsed.netloc:
                 continue
-            target = (markdown_path.parent / unquote(parsed.path)).resolve()
+            image_path = unquote(parsed.path)
+            if image_path.startswith("../images/"):
+                # Raw HTML URLs resolve from the built /chapN/ directory, not
+                # from the docs/ source file's filesystem location.
+                target = (docs_dir / image_path.removeprefix("../")).resolve()
+            else:
+                target = (markdown_path.parent / image_path).resolve()
             if not target.is_file():
                 failures.append(Failure(f"{chapter}.html", 5, f"image file is missing: {src}"))
     return failures

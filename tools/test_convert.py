@@ -209,6 +209,12 @@ def test_sidenote_ids_are_stable_and_unique():
 # --------------------------------------------------------------------------
 # 4. Dark-mode image classification
 # --------------------------------------------------------------------------
+def test_local_image_paths_resolve_from_rendered_page_directory():
+    tag = BeautifulSoup('<img src="images/tikz12.png">', "html.parser").img
+
+    assert 'src="../images/tikz12.png"' in convert.render_image(tag)
+
+
 @pytest.mark.parametrize(
     "filename",
     [

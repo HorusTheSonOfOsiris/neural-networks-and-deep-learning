@@ -421,7 +421,11 @@ def render_image(img_tag: Tag) -> str:
     src = img_tag.get("src", "")
     fname = src.rsplit("/", 1)[-1]
     normalized_fname = fname.lower()
-    attrs = [f'src="{src}"']
+    # Raw HTML image URLs are not rewritten by MkDocs. Chapter pages render
+    # at /chapN/, so source paths such as images/foo.png otherwise become the
+    # nonexistent /chapN/images/foo.png instead of /images/foo.png.
+    rendered_src = f"../{src}" if src.startswith("images/") else src
+    attrs = [f'src="{rendered_src}"']
     for a in ("width", "height"):
         v = img_tag.get(a)
         if v:

@@ -20,13 +20,13 @@ Before discussing backpropagation, let's warm up with a fast matrix-based algori
 
 Let's begin with a notation which lets us refer to weights in the network in an unambiguous way.  We'll use $w^l_{jk}$ to denote the weight for the connection from the $k^{\rm th}$ neuron in the $(l-1)^{\rm th}$ layer to the $j^{\rm th}$ neuron in the $l^{\rm th}$ layer.  So, for example, the diagram below shows the weight on a connection from the fourth neuron in the second layer to the second neuron in the third layer of a network:
 
-<img src="images/tikz16.png" class="diagram" alt="">
+<img src="../images/tikz16.png" class="diagram" alt="">
 
 This notation is cumbersome at first, and it does take some work to master.  But with a little effort you'll find the notation becomes easy and natural.  One quirk of the notation is the ordering of the $j$ and $k$ indices.  You might think that it makes more sense to use $j$ to refer to the input neuron, and $k$ to the output neuron, not vice versa, as is actually done.  I'll explain the reason for this quirk below.
 
 We use a similar notation for the network's biases and activations. Explicitly, we use $b^l_j$ for the bias of the $j^{\rm th}$ neuron in the $l^{\rm th}$ layer.  And we use $a^l_j$ for the activation of the $j^{\rm th}$ neuron in the $l^{\rm th}$ layer.  The following diagram shows examples of these notations in use:
 
-<img src="images/tikz17.png" class="diagram" alt="">
+<img src="../images/tikz17.png" class="diagram" alt="">
 
 With these notations, the activation $a^{l}_j$ of the $j^{\rm th}$ neuron in the $l^{\rm th}$ layer is related to the activations in the $(l-1)^{\rm th}$ layer by the equation (compare Equation [(4)](chap1.md#eqtn4) and surrounding discussion in the last chapter)
 
@@ -80,7 +80,7 @@ The reason we need this assumption is because what backpropagation actually lets
 
 The second assumption we make about the cost is that it can be written as a function of the outputs from the neural network:
 
-<img src="images/tikz18.png" class="diagram" alt="">
+<img src="../images/tikz18.png" class="diagram" alt="">
 
 For example, the quadratic cost function satisfies this requirement, since the quadratic cost for a single training example $x$ may be written as
 
@@ -114,7 +114,7 @@ Backpropagation is about understanding how changing the weights and biases in a 
 
 To understand how the error is defined, imagine there is a demon in our neural network:
 
-<img src="images/tikz19.png" class="diagram" alt="">
+<img src="../images/tikz19.png" class="diagram" alt="">
 
 The demon sits at the $j^{\rm th}$ neuron in layer $l$.  As the input to the neuron comes in, the demon messes with the neuron's operation.  It adds a little change $\Delta z^l_j$ to the neuron's weighted input, so that instead of outputting $\sigma(z^l_j)$, the neuron instead outputs $\sigma(z^l_j+\Delta z^l_j)$.  This change propagates through later layers in the network, finally causing the overall cost to change by an amount $\frac{\partial C}{\partial z^l_j} \Delta z^l_j$.
 
@@ -215,7 +215,7 @@ This tells us how to compute the partial derivatives $\partial C / \partial w^l_
 
 where it's understood that $a_{\rm in}$ is the activation of the neuron input to the weight $w$, and $\delta_{\rm out}$ is the error of the neuron output from the weight $w$.  Zooming in to look at just the weight $w$, and the two neurons connected by that weight, we can depict this as:
 
-<img src="images/tikz20.png" class="diagram" alt="">
+<img src="../images/tikz20.png" class="diagram" alt="">
 
 A nice consequence of Equation [(32)](#eqtn32) is that when the activation $a_{\rm in}$ is small, $a_{\rm in} \approx 0$, the gradient term $\partial C / \partial w$ will also tend to be small.  In this case, we'll say the weight *learns slowly*, meaning that it's not changing much during gradient descent.  In other words, one consequence of [(BP4)](#eqtnBP4) is that weights output from low-activation neurons learn slowly.
 
@@ -231,7 +231,7 @@ None of these observations is too greatly surprising.  Still, they help improve 
 
 <a id="backpropsummary"></a>
 
-<img src="images/tikz21.png" class="diagram" alt="">
+<img src="../images/tikz21.png" class="diagram" alt="">
 
 <a id="alternative_backprop"></a>
 
@@ -485,19 +485,19 @@ As I've explained it, backpropagation presents two mysteries.  First, what's the
 
 To improve our intuition about what the algorithm is doing, let's imagine that we've made a small change $\Delta w^l_{jk}$ to some weight in the network, $w^l_{jk}$:
 
-<img src="images/tikz22.png" class="diagram" alt="">
+<img src="../images/tikz22.png" class="diagram" alt="">
 
 That change in weight will cause a change in the output activation from the corresponding neuron:
 
-<img src="images/tikz23.png" class="diagram" alt="">
+<img src="../images/tikz23.png" class="diagram" alt="">
 
 That, in turn, will cause a change in *all* the activations in the next layer:
 
-<img src="images/tikz24.png" class="diagram" alt="">
+<img src="../images/tikz24.png" class="diagram" alt="">
 
 Those changes will in turn cause changes in the next layer, and then the next, and so on all the way through to causing a change in the final layer, and then in the cost function:
 
-<img src="images/tikz25.png" class="diagram" alt="">
+<img src="../images/tikz25.png" class="diagram" alt="">
 
 The change $\Delta C$ in the cost is related to the change $\Delta w^l_{jk}$ in the weight by the equation
 
@@ -519,7 +519,7 @@ Let's try to carry this out.  The change $\Delta w^l_{jk}$ causes a small change
 
 The change in activation $\Delta a^l_{j}$ will cause changes in *all* the activations in the next layer, i.e., the $(l+1)^{\rm th}$ layer.  We'll concentrate on the way just a single one of those activations is affected, say $a^{l+1}_q$,
 
-<img src="images/tikz26.png" class="diagram" alt="">
+<img src="../images/tikz26.png" class="diagram" alt="">
 
 In fact, it'll cause the following change:
 
@@ -575,7 +575,7 @@ where we've summed over all possible choices for the intermediate neurons along 
 
 Now, Equation [(53)](#eqtn53) looks complicated.  However, it has a nice intuitive interpretation.  We're computing the rate of change of $C$ with respect to a weight in the network.  What the equation tells us is that every edge between two neurons in the network is associated with a rate factor which is just the partial derivative of one neuron's activation with respect to the other neuron's activation.  The edge from the first weight to the first neuron has a rate factor $\partial a^{l}_j / \partial w^l_{jk}$.  The rate factor for a path is just the product of the rate factors along the path.  And the total rate of change $\partial C / \partial w^l_{jk}$ is just the sum of the rate factors of all paths from the initial weight to the final cost.  This procedure is illustrated here, for a single path:
 
-<img src="images/tikz27.png" class="diagram" alt="">
+<img src="../images/tikz27.png" class="diagram" alt="">
 
 What I've been providing up to now is a heuristic argument, a way of thinking about what's going on when you perturb a weight in a network. Let me sketch out a line of thinking you could use to further develop this argument.  First, you could derive explicit expressions for all the individual partial derivatives in Equation [(53)](#eqtn53).  That's easy to do with a bit of calculus.  Having done that, you could then try to figure out how to write all the sums over indices as matrix multiplications.  This turns out to be tedious, and requires some persistence, but not extraordinary insight.  After doing all this, and then simplifying as much as possible, what you discover is that you end up with exactly the backpropagation algorithm!  And so you can think of the backpropagation algorithm as providing a way of computing the sum over the rate factor for all these paths.  Or, to put it slightly differently, the backpropagation algorithm is a clever way of keeping track of small perturbations to the weights (and biases) as they propagate through the network, reach the output, and then affect the cost.
 
