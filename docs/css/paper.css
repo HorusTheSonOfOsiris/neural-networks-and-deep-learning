@@ -124,11 +124,17 @@ header {
 }
 
 [data-slot="sidebar"] {
-  background: color-mix(in srgb, var(--sidebar) 94%, transparent);
+  background: transparent;
 }
 
 [data-sidebar="content"] {
   scrollbar-color: var(--nndl-rule) transparent;
+}
+
+/* Shadcn's blurred scroll fades reveal rectangular edges against paper tones. */
+[data-slot="sidebar"] > div[class*="bg-gradient-to-b"],
+[data-sidebar="content"] > div[class*="bg-gradient-to-t"] {
+  display: none;
 }
 
 [data-sidebar="group"] {
