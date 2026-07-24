@@ -8,6 +8,9 @@ is a more comfortable reading experience (typography, light/dark mode,
 search, working equation anchors) on top of the original text — verbatim,
 not paraphrased.
 
+> [!NOTE]
+> **Read it live:** <https://horusthesonofosiris.github.io/neural-networks-and-deep-learning/>
+
 ## Attribution & license
 
 - Original work: © Michael Nielsen — <http://neuralnetworksanddeeplearning.com>
