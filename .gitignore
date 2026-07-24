@@ -12,3 +12,4 @@ wheels/
 # MkDocs build output
 site/
 
+.ignore
