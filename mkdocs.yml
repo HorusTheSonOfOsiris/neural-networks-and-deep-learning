@@ -33,6 +33,7 @@ extra_javascript:
   - js/interactives/chap3-plots.js
   - js/interactives/chap3-widgets.js
   - js/interactives/chap4-figures.js
+  - js/interactives/chap4-controls.js
   - js/interactives/chap5-figures.js
 
 nav:

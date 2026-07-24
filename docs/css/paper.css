@@ -534,7 +534,8 @@ article[view-transition-name="page"] {
 }
 
 .nndl-learning-widget,
-.nndl-softmax-panel {
+.nndl-softmax-panel,
+.nndl-universality-widget {
   overflow: hidden;
   border: 1px solid var(--nndl-rule);
   border-radius: 0.85rem;
@@ -750,6 +751,122 @@ article[view-transition-name="page"] {
   line-height: 1.45;
 }
 
+.nndl-parameter-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 10rem), 1fr));
+  gap: 0.9rem;
+  padding: 1.1rem 1.35rem;
+  border-bottom: 1px solid var(--nndl-rule);
+}
+
+.nndl-parameter-control {
+  min-width: 0;
+}
+
+.nndl-parameter-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.38rem;
+}
+
+.nndl-parameter-label {
+  color: var(--nndl-ink-soft);
+  font-size: 0.72rem;
+  font-weight: 630;
+}
+
+.nndl-parameter-value {
+  color: var(--nndl-ink);
+  font-size: 0.76rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 690;
+}
+
+.nndl-parameter-range {
+  width: 100%;
+  margin: 0;
+  accent-color: var(--nndl-accent);
+  cursor: pointer;
+}
+
+.nndl-parameter-range:focus-visible {
+  outline: 2px solid var(--nndl-accent);
+  outline-offset: 3px;
+}
+
+.nndl-universality-plot {
+  display: block;
+  width: calc(100% - 2.7rem);
+  height: auto;
+  margin: 1.25rem 1.35rem 0;
+  border: 1px solid var(--nndl-rule);
+  border-radius: 0.6rem;
+  background: color-mix(in srgb, var(--nndl-paper) 84%, transparent);
+}
+
+.nndl-universality-plot.is-editable {
+  cursor: crosshair;
+  touch-action: none;
+}
+
+.nndl-universality-gridline,
+.nndl-universality-axis,
+.nndl-universality-curve {
+  vector-effect: non-scaling-stroke;
+}
+
+.nndl-universality-gridline {
+  stroke: color-mix(in srgb, var(--nndl-rule) 70%, transparent);
+  stroke-width: 1;
+}
+
+.nndl-universality-axis {
+  stroke: color-mix(in srgb, var(--nndl-ink) 62%, transparent);
+  stroke-width: 1.1;
+}
+
+.nndl-universality-curve {
+  fill: none;
+  stroke: var(--nndl-accent);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2.7;
+}
+
+.nndl-universality-plot-title,
+.nndl-universality-tick,
+.nndl-universality-label {
+  fill: var(--nndl-ink);
+  font-family: var(--nndl-sans);
+}
+
+.nndl-universality-plot-title {
+  font-size: 0.82rem;
+  font-weight: 660;
+}
+
+.nndl-universality-tick {
+  fill: var(--nndl-ink-soft);
+  font-size: 0.68rem;
+}
+
+.nndl-universality-label {
+  font-family: var(--nndl-serif);
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.nndl-universality-status {
+  min-height: 1.3rem;
+  margin: 0 !important;
+  padding: 0.8rem 1.35rem 1.1rem;
+  color: var(--nndl-ink-soft);
+  font-size: 0.72rem;
+  line-height: 1.45;
+}
+
 .nndl-softmax-root {
   margin-block: 2rem;
 }
@@ -863,6 +980,15 @@ article[view-transition-name="page"] {
   }
 
   .nndl-learning-chart {
+    width: calc(100% - 1.7rem);
+    margin-inline: 0.85rem;
+  }
+
+  .nndl-parameter-grid {
+    padding-inline: 0.85rem;
+  }
+
+  .nndl-universality-plot {
     width: calc(100% - 1.7rem);
     margin-inline: 0.85rem;
   }
