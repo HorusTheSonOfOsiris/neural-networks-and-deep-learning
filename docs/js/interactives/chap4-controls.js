@@ -217,7 +217,7 @@
       "nndl-parameter-value",
       definition.initial.toFixed(definition.digits),
     );
-    output.htmlFor = inputId;
+    output.setAttribute("for", inputId);
 
     const range = element("input", "nndl-parameter-range");
     range.id = inputId;

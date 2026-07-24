@@ -419,7 +419,7 @@
         "nndl-softmax-logit",
         initialValue.toFixed(1),
       );
-      value.htmlFor = inputId;
+      value.setAttribute("for", inputId);
 
       const meter = element("span", "nndl-softmax-meter");
       const fill = element("span", "nndl-softmax-fill");
@@ -431,7 +431,7 @@
         "nndl-softmax-probability",
         `a${SUBSCRIPTS[index]} = 0.000`,
       );
-      probability.htmlFor = inputId;
+      probability.setAttribute("for", inputId);
 
       row.append(label, range, value, meter, probability);
       rows.append(row);

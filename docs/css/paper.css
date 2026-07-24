@@ -867,6 +867,86 @@ article[view-transition-name="page"] {
   line-height: 1.45;
 }
 
+.nndl-surface {
+  display: block;
+  width: calc(100% - 2.7rem);
+  height: auto;
+  margin: 1.25rem 1.35rem 0;
+  border: 1px solid var(--nndl-rule);
+  border-radius: 0.6rem;
+  background: color-mix(in srgb, var(--nndl-paper) 84%, transparent);
+}
+
+.nndl-surface-base {
+  fill: color-mix(in srgb, var(--nndl-paper-deep) 78%, transparent);
+  stroke: var(--nndl-rule);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.nndl-surface-cell {
+  fill: var(--nndl-accent);
+  stroke: color-mix(in srgb, var(--nndl-ink) 28%, transparent);
+  stroke-width: 0.35;
+  vector-effect: non-scaling-stroke;
+}
+
+.nndl-surface-cell.is-negative {
+  fill: var(--nndl-ink-soft);
+}
+
+.nndl-surface-axis {
+  stroke: color-mix(in srgb, var(--nndl-ink) 65%, transparent);
+  stroke-width: 1.2;
+  vector-effect: non-scaling-stroke;
+}
+
+.nndl-surface-label {
+  fill: var(--nndl-ink-soft);
+  font-family: var(--nndl-serif);
+  font-size: 0.82rem;
+  font-style: italic;
+}
+
+.nndl-design-target {
+  stroke: var(--nndl-ink-soft);
+  stroke-dasharray: 6 6;
+  opacity: 0.72;
+}
+
+.nndl-design-approximation {
+  stroke-width: 3.2;
+}
+
+.nndl-universality-status.is-success {
+  color: var(--nndl-accent);
+  font-weight: 680;
+}
+
+.nndl-bump-component {
+  stroke-width: 2.2;
+}
+
+.nndl-bump-component.is-component-1 {
+  stroke: #c45136;
+}
+
+.nndl-bump-component.is-component-2 {
+  stroke: #43866d;
+}
+
+.nndl-bump-component.is-component-3 {
+  stroke: #4c78a8;
+}
+
+.nndl-bump-component.is-component-4 {
+  stroke: #9a5b8e;
+}
+
+.nndl-bump-component.is-component-5 {
+  stroke: #bc812d;
+}
+
 .nndl-softmax-root {
   margin-block: 2rem;
 }
@@ -989,6 +1069,11 @@ article[view-transition-name="page"] {
   }
 
   .nndl-universality-plot {
+    width: calc(100% - 1.7rem);
+    margin-inline: 0.85rem;
+  }
+
+  .nndl-surface {
     width: calc(100% - 1.7rem);
     margin-inline: 0.85rem;
   }
