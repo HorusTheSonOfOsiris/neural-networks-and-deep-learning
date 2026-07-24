@@ -541,6 +541,10 @@ article[view-transition-name="page"] {
   html.layout-full .typography h1 {
     max-width: none;
   }
+
+  html.layout-full .sidenote {
+    margin-right: 0;
+  }
 }
 
 @media (max-width: 48rem) {
