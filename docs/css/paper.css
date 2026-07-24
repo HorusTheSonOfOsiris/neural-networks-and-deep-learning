@@ -533,13 +533,13 @@ article[view-transition-name="page"] {
 
 @media (min-width: 100rem) {
   html.layout-full article[view-transition-name="page"] {
-    --nndl-reading-width: 112ch;
-
+    width: 100%;
+    max-width: none;
     margin-inline: 0;
   }
 
   html.layout-full .typography h1 {
-    max-width: 24ch;
+    max-width: none;
   }
 }
 
