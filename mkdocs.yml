@@ -31,6 +31,7 @@ extra_javascript:
   - js/mathjax/tex-chtml.js
   - js/interactives/chap1-plots.js
   - js/interactives/chap3-plots.js
+  - js/interactives/chap3-widgets.js
   - js/interactives/chap5-figures.js
 
 nav:
