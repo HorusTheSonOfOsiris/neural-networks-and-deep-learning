@@ -50,6 +50,10 @@
     xTicks = [-4, -3, -2, -1, 0, 1, 2, 3, 4],
     yTicks = [0, 0.2, 0.4, 0.6, 0.8, 1],
     xLabel = "z",
+    yLabel = "",
+    xAxisAt = yDomain[0],
+    yAxisAt = xDomain[0],
+    scatterPoints = [],
     yTickFormat = (value) => value.toFixed(1),
   }) => {
     const container = document.getElementById(id);
@@ -66,6 +70,8 @@
       MARGIN.top +
       (1 - (value - yDomain[0]) / (yDomain[1] - yDomain[0])) *
         plotHeight;
+    const xAxisY = scaleY(xAxisAt);
+    const yAxisX = scaleX(yAxisAt);
     const titleId = `${id}-title`;
     const descriptionId = `${id}-description`;
     const svg = createSvgElement("svg", {
@@ -105,7 +111,7 @@
           "text",
           {
             class: "nndl-plot-tick",
-            x: MARGIN.left - 12,
+            x: yAxisX - 12,
             y: y + 4,
             "text-anchor": "end",
           },
@@ -129,7 +135,7 @@
           {
             class: "nndl-plot-tick",
             x,
-            y: HEIGHT - MARGIN.bottom + 25,
+            y: xAxisY + 25,
             "text-anchor": "middle",
           },
           value,
@@ -141,8 +147,8 @@
     svg.append(
       createSvgElement("line", {
         class: "nndl-plot-axis",
-        x1: MARGIN.left,
-        x2: MARGIN.left,
+        x1: yAxisX,
+        x2: yAxisX,
         y1: MARGIN.top,
         y2: HEIGHT - MARGIN.bottom,
         "aria-hidden": "true",
@@ -151,8 +157,8 @@
         class: "nndl-plot-axis",
         x1: MARGIN.left,
         x2: WIDTH - MARGIN.right,
-        y1: HEIGHT - MARGIN.bottom,
-        y2: HEIGHT - MARGIN.bottom,
+        y1: xAxisY,
+        y2: xAxisY,
         "aria-hidden": "true",
       }),
       createSvgElement(
@@ -167,18 +173,47 @@
       ),
     );
 
-    const pathData = points
-      .map(
-        ([x, y], index) =>
-          `${index === 0 ? "M" : "L"} ${scaleX(x).toFixed(2)} ${scaleY(y).toFixed(2)}`,
-      )
-      .join(" ");
-    svg.append(
-      createSvgElement("path", {
-        class: "nndl-plot-curve",
-        d: pathData,
-      }),
-    );
+    if (yLabel) {
+      svg.append(
+        createSvgElement(
+          "text",
+          {
+            class: "nndl-plot-label",
+            x: 20,
+            y: MARGIN.top + plotHeight / 2,
+            "text-anchor": "middle",
+            transform: `rotate(-90 20 ${MARGIN.top + plotHeight / 2})`,
+          },
+          yLabel,
+        ),
+      );
+    }
+
+    if (points.length > 0) {
+      const pathData = points
+        .map(
+          ([x, y], index) =>
+            `${index === 0 ? "M" : "L"} ${scaleX(x).toFixed(2)} ${scaleY(y).toFixed(2)}`,
+        )
+        .join(" ");
+      svg.append(
+        createSvgElement("path", {
+          class: "nndl-plot-curve",
+          d: pathData,
+        }),
+      );
+    }
+
+    scatterPoints.forEach(([x, y]) => {
+      svg.append(
+        createSvgElement("circle", {
+          class: "nndl-plot-point",
+          cx: scaleX(x),
+          cy: scaleY(y),
+          r: 5,
+        }),
+      );
+    });
 
     container.replaceChildren(svg);
     container.classList.add("is-enhanced");

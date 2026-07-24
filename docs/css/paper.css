@@ -485,6 +485,13 @@ article[view-transition-name="page"] {
   stroke-width: 2.5;
 }
 
+.nndl-plot-point {
+  fill: var(--nndl-accent);
+  stroke: var(--nndl-paper);
+  stroke-width: 1.5;
+  vector-effect: non-scaling-stroke;
+}
+
 .nndl-gradient-diagram {
   width: min(100%, 34rem);
 }
