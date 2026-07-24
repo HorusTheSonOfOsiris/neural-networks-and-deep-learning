@@ -520,6 +520,19 @@ article[view-transition-name="page"] {
   vector-effect: non-scaling-stroke;
 }
 
+.nndl-chap4-network {
+  width: min(100%, 46rem);
+}
+
+.nndl-network-layer-label {
+  fill: var(--nndl-ink-soft);
+  font-family: var(--nndl-sans);
+  font-size: 0.72rem;
+  font-weight: 620;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 .nndl-learning-widget,
 .nndl-softmax-panel {
   overflow: hidden;
