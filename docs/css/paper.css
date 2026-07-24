@@ -198,10 +198,11 @@ article[view-transition-name="page"] {
   --nndl-reading-width: 76ch;
 
   width: min(100%, var(--nndl-reading-width));
+  max-width: var(--nndl-reading-width);
   margin-inline: auto;
   padding: 2.75rem clamp(1.25rem, 3.5vw, 3rem) 5rem;
   animation: nndl-page-in 280ms ease-out both;
-  transition: width 220ms ease;
+  transition: width 220ms ease, max-width 220ms ease;
 }
 
 .nndl-page-actions {
@@ -533,6 +534,8 @@ article[view-transition-name="page"] {
 @media (min-width: 100rem) {
   html.layout-full article[view-transition-name="page"] {
     --nndl-reading-width: 112ch;
+
+    margin-inline: 0;
   }
 
   html.layout-full .typography h1 {
