@@ -74,12 +74,26 @@
     const yAxisX = scaleX(yAxisAt);
     const titleId = `${id}-title`;
     const descriptionId = `${id}-description`;
+    const clipId = `${id}-plot-clip`;
     const svg = createSvgElement("svg", {
       class: "nndl-plot",
       viewBox: `0 0 ${WIDTH} ${HEIGHT}`,
       role: "img",
       "aria-labelledby": `${titleId} ${descriptionId}`,
     });
+
+    const clipPath = createSvgElement("clipPath", { id: clipId });
+    clipPath.append(
+      createSvgElement("rect", {
+        x: MARGIN.left,
+        y: MARGIN.top,
+        width: plotWidth,
+        height: plotHeight,
+      }),
+    );
+    const defs = createSvgElement("defs");
+    defs.append(clipPath);
+    svg.append(defs);
 
     svg.append(
       createSvgElement("title", { id: titleId }, title),
@@ -200,6 +214,7 @@
         createSvgElement("path", {
           class: "nndl-plot-curve",
           d: pathData,
+          "clip-path": `url(#${clipId})`,
         }),
       );
     }
