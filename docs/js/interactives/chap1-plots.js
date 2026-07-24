@@ -3,8 +3,6 @@
   const WIDTH = 640;
   const HEIGHT = 360;
   const MARGIN = { top: 56, right: 28, bottom: 58, left: 68 };
-  const PLOT_WIDTH = WIDTH - MARGIN.left - MARGIN.right;
-  const PLOT_HEIGHT = HEIGHT - MARGIN.top - MARGIN.bottom;
 
   const plots = [
     {
@@ -42,15 +40,32 @@
     return element;
   };
 
-  const scaleX = (value) => MARGIN.left + ((value + 5) / 10) * PLOT_WIDTH;
-  const scaleY = (value) => MARGIN.top + (1 - value) * PLOT_HEIGHT;
-
-  const drawPlot = ({ id, title, description, points }) => {
+  const drawPlot = ({
+    id,
+    title,
+    description,
+    points,
+    xDomain = [-5, 5],
+    yDomain = [0, 1],
+    xTicks = [-4, -3, -2, -1, 0, 1, 2, 3, 4],
+    yTicks = [0, 0.2, 0.4, 0.6, 0.8, 1],
+    xLabel = "z",
+    yTickFormat = (value) => value.toFixed(1),
+  }) => {
     const container = document.getElementById(id);
     if (!container) {
       return;
     }
 
+    const plotWidth = WIDTH - MARGIN.left - MARGIN.right;
+    const plotHeight = HEIGHT - MARGIN.top - MARGIN.bottom;
+    const scaleX = (value) =>
+      MARGIN.left +
+      ((value - xDomain[0]) / (xDomain[1] - xDomain[0])) * plotWidth;
+    const scaleY = (value) =>
+      MARGIN.top +
+      (1 - (value - yDomain[0]) / (yDomain[1] - yDomain[0])) *
+        plotHeight;
     const titleId = `${id}-title`;
     const descriptionId = `${id}-description`;
     const svg = createSvgElement("svg", {
@@ -76,8 +91,7 @@
     );
 
     const grid = createSvgElement("g", { "aria-hidden": "true" });
-    for (let index = 0; index <= 5; index += 1) {
-      const value = index / 5;
+    yTicks.forEach((value) => {
       const y = scaleY(value);
       grid.append(
         createSvgElement("line", {
@@ -95,12 +109,12 @@
             y: y + 4,
             "text-anchor": "end",
           },
-          value.toFixed(1),
+          yTickFormat(value),
         ),
       );
-    }
+    });
 
-    for (let value = -4; value <= 4; value += 1) {
+    xTicks.forEach((value) => {
       const x = scaleX(value);
       grid.append(
         createSvgElement("line", {
@@ -121,7 +135,7 @@
           value,
         ),
       );
-    }
+    });
     svg.append(grid);
 
     svg.append(
@@ -145,11 +159,11 @@
         "text",
         {
           class: "nndl-plot-label",
-          x: MARGIN.left + PLOT_WIDTH / 2,
+          x: MARGIN.left + plotWidth / 2,
           y: HEIGHT - 12,
           "text-anchor": "middle",
         },
-        "z",
+        xLabel,
       ),
     );
 
@@ -170,10 +184,16 @@
     container.classList.add("is-enhanced");
   };
 
+  const onReady = (callback) => {
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", callback, { once: true });
+    } else {
+      callback();
+    }
+  };
+
+  window.NNDLPlots = { drawPlot, onReady };
+
   const render = () => plots.forEach(drawPlot);
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", render, { once: true });
-  } else {
-    render();
-  }
+  onReady(render);
 })();

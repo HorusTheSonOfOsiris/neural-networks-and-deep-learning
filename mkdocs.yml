@@ -30,6 +30,7 @@ extra_javascript:
   - js/mathjax-config.js
   - js/mathjax/tex-chtml.js
   - js/interactives/chap1-plots.js
+  - js/interactives/chap5-figures.js
 
 nav:
   - Home: index.md
