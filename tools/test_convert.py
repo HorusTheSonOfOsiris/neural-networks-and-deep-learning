@@ -24,6 +24,7 @@ import sys
 from pathlib import Path
 
 import pytest
+from bs4 import BeautifulSoup
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import convert  # noqa: E402
@@ -206,7 +207,41 @@ def test_sidenote_ids_are_stable_and_unique():
 
 
 # --------------------------------------------------------------------------
-# 4. Heading anchor-id preservation
+# 4. Dark-mode image classification
+# --------------------------------------------------------------------------
+@pytest.mark.parametrize(
+    "filename",
+    [
+        "tikz12.png",
+        "valley_with_ball.png",
+        "simple_conv.png",
+        "overfitting_full.png",
+        "high_weight_function.jpg",
+    ],
+)
+def test_dark_mode_diagrams_are_classified(filename):
+    tag = BeautifulSoup(f'<img src="images/{filename}">', "html.parser").img
+    assert 'class="diagram"' in convert.render_image(tag)
+
+
+@pytest.mark.parametrize(
+    "filename",
+    [
+        "Kangaroo.JPG",
+        "hubble.jpg",
+        "digits.png",
+        "ensemble_errors.png",
+        "mnist_100_digits.png",
+        "adversarial.jpg",
+    ],
+)
+def test_photos_and_mnist_images_are_not_inverted(filename):
+    tag = BeautifulSoup(f'<img src="images/{filename}">', "html.parser").img
+    assert 'class="diagram"' not in convert.render_image(tag)
+
+
+# --------------------------------------------------------------------------
+# 5. Heading anchor-id preservation
 # --------------------------------------------------------------------------
 def test_heading_anchor_id_preserved():
     body = (

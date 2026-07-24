@@ -164,7 +164,7 @@ Can we do better than these results using a deeper network architecture?
 
 Let's begin by inserting a convolutional layer, right at the beginning of the network.  We'll use $5$ by $5$ local receptive fields, a stride length of $1$, and $20$ feature maps.  We'll also insert a max-pooling layer, which combines the features using $2$ by $2$ pooling windows. So the overall network architecture looks much like the architecture discussed in the last section, but with an extra fully-connected layer:
 
-<img src="images/simple_conv.png" width="550px" alt="">
+<img src="images/simple_conv.png" width="550px" class="diagram" alt="">
 
 In this architecture, we can think of the convolutional and pooling layers as learning about local spatial structure in the input training image, while the later, fully-connected layer learns at a more abstract level, integrating global information from across the entire image.  This is a common pattern in convolutional neural networks.
 

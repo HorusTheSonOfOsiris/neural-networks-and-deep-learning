@@ -6,7 +6,7 @@ sidebar_title: "05 · Deep-network training"
 
 Imagine you're an engineer who has been asked to design a computer from scratch.  One day you're working away in your office, designing logical circuits, setting out `AND` gates, `OR` gates, and so on, when your boss walks in with bad news. The customer has just added a surprising design requirement: the circuit for the entire computer must be just two layers deep:
 
-<img src="images/shallow_circuit.png" width="500px" alt="">
+<img src="images/shallow_circuit.png" width="500px" class="diagram" alt="">
 
 You're dumbfounded, and tell your boss: "The customer is crazy!"
 
@@ -18,7 +18,7 @@ But just because something is possible doesn't make it a good idea. In practice,
 
 For instance, suppose we're designing a logical circuit to multiply two numbers.  Chances are we want to build it up out of sub-circuits doing operations like adding two numbers.  The sub-circuits for adding two numbers will, in turn, be built up out of sub-sub-circuits for adding two bits.  Very roughly speaking our circuit will look like:
 
-<img src="images/circuit_multiplication.png" width="500px" alt="">
+<img src="images/circuit_multiplication.png" width="500px" class="diagram" alt="">
 
 That is, our final circuit contains at least three layers of circuit elements.  In fact, it'll probably contain more than three layers, as we break the sub-tasks down into smaller units than I've described. But you get the general idea.
 
@@ -128,7 +128,7 @@ What happens if we add more hidden layers?  If we have three hidden layers, in a
 
 We've been looking at the speed of learning at the start of training, that is, just after the networks are initialized.  How does the speed of learning change as we train our networks?  Let's return to look at the network with just two hidden layers.  The speed of learning changes as follows:
 
-<img src="images/training_speed_2_layers.png" width="500px" alt="">
+<img src="images/training_speed_2_layers.png" width="500px" class="diagram" alt="">
 
 To generate these results, I used batch gradient descent with just 1,000 training images, trained over 500 epochs.  This is a bit different than the way we usually train - I've used no mini-batches, and just 1,000 training images, rather than the full 50,000 image training set.  I'm not trying to do anything sneaky, or pull the wool over your eyes, but it turns out that using mini-batch stochastic gradient descent gives much noisier (albeit very similar, when you average away the noise) results.  Using the parameters I've chosen is an easy way of smoothing the results out, so we can see what's going on.
 
@@ -136,11 +136,11 @@ In any case, as you can see the two layers start out learning at very different 
 
 What about more complex networks?  Here's the results of a similar experiment, but this time with three hidden layers (a $[784, 30, 30, 30, 10]$ network):
 
-<img src="images/training_speed_3_layers.png" width="500px" alt="">
+<img src="images/training_speed_3_layers.png" width="500px" class="diagram" alt="">
 
 Again, early hidden layers learn much more slowly than later hidden layers.  Finally, let's add a fourth hidden layer (a $[784, 30, 30, 30, 30, 10]$ network), and see what happens when we train:
 
-<img src="images/training_speed_4_layers.png" width="500px" alt="">
+<img src="images/training_speed_4_layers.png" width="500px" class="diagram" alt="">
 
 Again, early hidden layers learn much more slowly than later hidden layers.  In this case, the first hidden layer is learning roughly 100 times slower than the final hidden layer.  No wonder we were having trouble training these networks earlier!
 

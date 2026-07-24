@@ -62,6 +62,31 @@ LINK_MAP = {
 
 EXERCISE_HEADING_WORDS = {"exercise", "exercises", "problem", "problems"}
 
+DARK_MODE_DIAGRAMS = {
+    "bump_function.jpg",
+    "circuit_multiplication.png",
+    "high_weight_function.jpg",
+    "more_data.png",
+    "more_data_comparison.png",
+    "more_data_log.png",
+    "multiple_eta.png",
+    "overfitting1.png",
+    "overfitting2.png",
+    "overfitting3.png",
+    "overfitting4.png",
+    "overfitting_full.png",
+    "regularized1.png",
+    "regularized2.png",
+    "regularized_full.png",
+    "shallow_circuit.png",
+    "simple_conv.png",
+    "training_speed_2_layers.png",
+    "training_speed_3_layers.png",
+    "training_speed_4_layers.png",
+    "weight_initialization_30.png",
+    "weight_initialization_100.png",
+}
+
 SIDEBAR_TITLES = {
     "chap1.html": "01 · Handwritten digits",
     "chap2.html": "02 · Backpropagation",
@@ -395,12 +420,16 @@ def render_sidenote(span_tag: Tag, current_page: str, has_marker: bool) -> str:
 def render_image(img_tag: Tag) -> str:
     src = img_tag.get("src", "")
     fname = src.rsplit("/", 1)[-1]
+    normalized_fname = fname.lower()
     attrs = [f'src="{src}"']
     for a in ("width", "height"):
         v = img_tag.get(a)
         if v:
             attrs.append(f'{a}="{v}"')
-    if re.match(r"^(tikz|valley)", fname, re.IGNORECASE):
+    if (
+        normalized_fname.startswith(("tikz", "valley"))
+        or normalized_fname in DARK_MODE_DIAGRAMS
+    ):
         attrs.append('class="diagram"')
     attrs.append('alt=""')
     return f"<img {' '.join(attrs)}>"
